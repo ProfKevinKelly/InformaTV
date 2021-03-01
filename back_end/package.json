@@ -1,16 +1,23 @@
 {
-  "name": "back-end",
-  "version": "0.0.0",
-  "private": true,
+  "name": "reactexpress",
+  "version": "1.0.0",
+  "description": "Starter kit for creating React and Express apps",
+  "main": "server.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "client-install": "cd front_end && npm install",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "cd ../front_end && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Brad Traversy",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.14.6"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.1"
+    "concurrently": "^3.5.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.2"
   }
 }
