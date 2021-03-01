@@ -4,10 +4,10 @@
 - Michael Makarenko
 
 ## Current state (27/02/2021):
-- non-interactive HTML skeleton comprised almost completely of placeholders.
+- non-interactive minimal HTML based on requirements document with placeholders.
 
 ## Doing Currently:
-- learning HTML, will move onto learning CSS soon, and JS after that.
+- learning HTML and CSS. 
 
 ## TO DO for next week:
 - improve looks and functionality with better HTMl and the addition of CSS.
