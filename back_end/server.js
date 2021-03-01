@@ -1,9 +1,12 @@
 const express = require('express');
 const cors = require('cors');
-
 const app = express();
 
-app.get('/api/customers', cors(), (req, res) => {
+var APIRouter = require('./routes/API');
+
+app.use('/API', APIRouter);
+
+app.get('/customers', cors(), (req, res) => {
   const customers = [
     {id: 1, firstName: 'John', lastName: 'Doe'},
     {id: 2, firstName: 'Brad', lastName: 'Traversy'},
