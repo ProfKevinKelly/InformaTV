@@ -8,9 +8,9 @@ app.use('/API', APIRouter);
 
 app.get('/customers', cors(), (req, res) => {
   const customers = [
-    {id: 1, firstName: 'John', lastName: 'Doe'},
-    {id: 2, firstName: 'Brad', lastName: 'Traversy'},
-    {id: 3, firstName: 'Mary', lastName: 'Swanson'},
+    {id: 1, firstName: 'Curator', lastName: 'View'},
+    {id: 2, firstName: 'Elderly', lastName: 'Person'},
+    {id: 3, firstName: 'Trusted', lastName: 'Circle'},
   ];
 
   res.json(customers);
