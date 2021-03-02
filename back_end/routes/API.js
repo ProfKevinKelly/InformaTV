@@ -1,14 +1,12 @@
 var express = require('express');
 var router = express.Router();
-const apiService = require('../services/apiService');
+const db = require('../config');
 
-/* GET pro. */
-router.get('/', async function(req, res, next) {
-  try {
-    res.json(await apiService.getTest(req.query.page));
-  } catch (err) {
-    console.error(`Error while getting `, err.message);
-    next(err);
-  }
+router.get('/testFetch', function(req, res, next) {
+	db.conn.query('SELECT * FROM test.testTable', function (error, results, fields) {
+		if (error) throw error;
+		res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
+	});
 });
+
 module.exports = router;
