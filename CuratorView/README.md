@@ -4,18 +4,19 @@
 
 - Michael Makarenko
 
-## Current state (27/02/2021)
+## Current state (07/03/2021)
 
-- non-interactive minimal HTML based on requirements document with placeholders.
+- Non-interactive minimal HTML+CSS based on requirements document with placeholders.
 
 ## Doing Currently
 
-- learning HTML and CSS.
+- Learning HTML and CSS.
+- Working on curator.html
 
 ## TO DO for next week
 
-- improve looks and functionality with better HTMl and the addition of CSS.
+- Finalise HTML+CSS design and implement basic functionality
 
 ## TO DO for the week after
 
-- successfully incorporate the HTML+CSS into a basic, functional React app page.
+- Successfully incorporate the HTML+CSS into a functional React app page.
