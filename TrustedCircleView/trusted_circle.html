@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-UK">
+<html class="TCircle" lang="en-UK">
   <head>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="temp.css" rel="stylesheet">
     <meta charset="utf-8">
-    <meta name="author" content="Michael Makarenko">
+    <meta name="authors" content="Michael Makarenko, ">
     <meta name="description" content="The Trusted Circle View aims to display all necessary information and provide
     funcionality for members of the Elderly Person's Trusted Circle.">
     
@@ -11,27 +14,33 @@
   </head>
   <body>
 
-    <h1>Trusted Circle View</h1>
-    <img src="images/TCvideo.jpg" alt="Placeholder1">
-
-    <h2>Reminders</h2>
-    <form action="">
-    <label for="newreminder">Add a reminder:</label><br>
-    <input type="text" id="newreminder" name="newreminder">
-    <input type="button" value="Add" onclick="alert('Added Reminder')">
-    </form><br>
-    <form action="">
-        <label for="reminder">Remove a reminder:</label><br>
-        <select id="reminder" name="reminder">
-          <option value="reminder1">Call Linda</option>
-          <option value="reminder2">Max visits tomorrow</option>
-        </select>
-        <input type="button" value="Remove" onclick="alert('Removed Reminder')">
-    </form><br>
-    <img src="images/TCtext.jpg" alt="Placeholder2">
-
-    <h2>Messages</h2>
-    <img src="images/TCtext.jpg" alt="Placeholder3">
-
+    <h1 class="tcvTitle">Trusted Circle View</h1>
+    <img class="tcVid" src="images/TCvideo.jpg" alt="Placeholder1">
+    <br>
+    <div class="tcvbotrow">
+      <h2 class="tcvHeader">Reminders</h2>
+      <form action="">
+        <label for="newreminder">Add a reminder:</label>
+        <br>
+        <input class="txtbox" type="text" id="newreminder" name="newreminder">
+        <input class="AddBtn" type="button" value="Add" onclick="alert('Added Reminder')">
+      </form>
+      <br>
+      <form action="">
+          <label for="reminder">Remove a reminder:</label>
+          <br>
+          <select class="rmndrList" id="reminder" name="reminder">
+            <option value="reminder1">Call Linda</option>
+            <option value="reminder2">Max visits tomorrow</option>
+          </select>
+          <input class="RemBtn" type="button" value="Remove" onclick="alert('Removed Reminder')">
+      </form>
+      <br>
+      <img src="images/TCtext.jpg" alt="Placeholder2">
+    </div>
+    <div class="tcvbotrow">
+      <h2 class="tcvHeader">Messages</h2>
+      <img src="images/TCtext.jpg" alt="Placeholder3">
+    </div>
   </body>
 </html>

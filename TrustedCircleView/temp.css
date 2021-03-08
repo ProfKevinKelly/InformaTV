@@ -1,0 +1,59 @@
+.TCircle
+{
+    font-family: "Open Sans", sans-serif;
+    background-color: steelblue;
+}
+
+.TCircle body
+{
+    text-align: center;
+}
+
+.tcvTitle
+{
+    color: khaki;
+    font-size: 60px;
+    margin: 0;
+    padding: 0px 0;
+    text-shadow: 3px 3px 1px black;
+}
+
+.tcvHeader
+{
+    color: khaki;
+    text-decoration: solid;
+}
+
+.TCircle label, .TCircle option, .TCircle input, .TCircle select
+{
+    color: khaki;
+    font-size: 14px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+.tcVid
+{
+    padding: 20px;
+}
+
+.tcvbotrow
+{
+    display: inline-block;
+    padding: 20px;
+}
+
+input.txtbox, select.rmndrList
+{
+    background-color: dimgray;
+}
+
+input.AddBtn
+{
+    background-color: green;
+}
+
+input.RemBtn
+{
+    background-color: darkred;
+}
