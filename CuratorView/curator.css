@@ -1,0 +1,85 @@
+/*top stuff*/
+
+.curator
+{
+    font-family: "Open Sans", sans-serif;
+}
+
+.curator body
+{
+    background-color: steelblue;
+    padding: 0px;
+    margin: 0px;
+    background: linear-gradient(90deg, dimgrey 25%,  steelblue 26%)
+}
+
+.curator h1
+{
+    text-align: center;
+    color: khaki;
+    font-size: 60px;
+    margin: 0;
+    padding: 0px 0;
+    text-shadow: 3px 3px 1px black;
+}
+
+/*small text*/
+
+.curator label, .curator option, .curator input, .curator select
+{
+    color: khaki;
+    font-size: 20px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+/*main stuff*/
+
+.cvtoprow
+{
+    display: inline-block;
+    padding: 30px;
+}
+
+select.cvMembList
+{
+    background-color: steelblue;
+    height: 45px;
+}
+
+.cvContent
+{
+    position: relative;
+    left: 133px;
+}
+
+.cvPanel
+{
+    position: relative;
+    left: 430px;
+    padding: 30px;
+}
+
+/*buttons*/
+
+input.AddBtn
+{
+    background-color: green;
+    cursor: pointer;
+}
+
+input.AddBtn:hover
+{
+    background-color: lightgreen;
+}
+
+input.RemBtn
+{
+    background-color: darkred;
+    cursor: pointer;
+}
+
+input.RemBtn:hover
+{
+    background-color: red;
+}

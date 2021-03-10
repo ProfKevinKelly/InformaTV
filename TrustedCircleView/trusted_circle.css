@@ -1,0 +1,109 @@
+/*top stuff*/
+
+.TCircle
+{
+    font-family: "Open Sans", sans-serif;
+    background-color: steelblue;
+}
+
+.TCircle body
+{
+    text-align: center;
+}
+
+.TCircle h1
+{
+    color: khaki;
+    font-size: 60px;
+    margin: 0;
+    padding: 0px 0;
+    text-shadow: 3px 3px 1px black;
+}
+.TCircle h2
+{
+    color: khaki;
+    text-decoration: solid;
+}
+.TCircle label, .TCircle option, .TCircle input, .TCircle select
+{
+    color: khaki;
+    font-size: 14px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+.tcVid
+{
+    padding: 20px;
+}
+
+/*content grid*/
+
+.RemMsg
+{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    grid-auto-rows: 100px;
+    grid-template-areas:
+      "a a a a b b b b"
+      "a a a a b b b b"
+      "c c c c d d d d"
+      "c c c c d d d d";
+    align-items: start;
+}
+.RemT
+{
+    grid-area: a;
+}
+.MsgT
+{
+    grid-area: b;
+}
+.RemB
+{
+    grid-area: c;
+}
+.MsgB
+{
+    grid-area: d;
+}
+
+/*boxes*/
+
+input.txtbox, select.rmndrList
+{
+    background-color: dimgrey;
+}
+
+/*buttons*/
+
+input.AddBtn
+{
+    background-color: green;
+    cursor: pointer;
+}
+input.AddBtn:hover
+{
+    background-color: lightgreen;
+}
+
+input.RemBtn
+{
+    background-color: darkred;
+    cursor: pointer;
+}
+input.RemBtn:hover
+{
+    background-color: red;
+}
+
+input.SndBtn
+{
+    background-color: dimgrey;
+    cursor: pointer;
+}
+input.SndBtn:hover
+{
+    background-color: darkgrey;
+}

@@ -6,19 +6,18 @@
 
 -
 
-## Current state (08/03/2021)
+## Current state (10/03/2021)
 
 - Non-interactive minimal HTML+CSS based on requirements document with placeholders.
 
 ## Doing Currently
 
-- learning HTML and CSS
-- Working on trusted_circle.html
+- learning HTML, CSS and React.js
 
 ## TO DO for next week
 
-- Finalise HTML+CSS design and implement basic functionality
+- Finalise HTML+CSS design
 
 ## TO DO for the week after
 
-- Successfully incorporate the HTML+CSS into a functional React app page.
+- Successfully incorporate the HTML+CSS into a basic, functional React app page.
