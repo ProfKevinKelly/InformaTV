@@ -1,4 +1,4 @@
-/*top stuff*/
+/*Document & Body*/
 
 .TCircle
 {
@@ -11,6 +11,8 @@
     text-align: center;
 }
 
+/*Page Title*/
+
 .TCircle h1
 {
     color: khaki;
@@ -19,25 +21,15 @@
     padding: 0px 0;
     text-shadow: 3px 3px 1px black;
 }
-.TCircle h2
-{
-    color: khaki;
-    text-decoration: solid;
-}
-.TCircle label, .TCircle option, .TCircle input, .TCircle select
-{
-    color: khaki;
-    font-size: 14px;
-    line-height: 2;
-    letter-spacing: 1px;
-}
+
+/*Video Content*/
 
 .tcVid
 {
     padding: 20px;
 }
 
-/*content grid*/
+/*Reminders and Messages*/
 
 .RemMsg
 {
@@ -69,14 +61,23 @@
     grid-area: d;
 }
 
-/*boxes*/
+.RemMsg h2
+{
+    color: khaki;
+    text-decoration: solid;
+}
+.RemMsg label, .RemMsg option, .RemMsg input, .RemMsg select
+{
+    color: khaki;
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
 
 input.txtbox, select.rmndrList
 {
     background-color: dimgrey;
 }
-
-/*buttons*/
 
 input.AddBtn
 {
