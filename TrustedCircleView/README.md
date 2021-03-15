@@ -6,13 +6,15 @@
 
 -
 
-## Current state (10/03/2021)
+## Current state (15/03/2021)
 
-- Non-interactive minimal HTML+CSS based on requirements document with placeholders.
+- HTML+CSS+JS based on requirements document with placeholders.
+- Interactive placeholders: Reminders List
+- Non-interactive placeholders: Messages, Content View
 
 ## Doing Currently
 
-- learning HTML, CSS and React.js
+- Michael: learning HTML, CSS, JavaScript and React
 
 ## TO DO for next week
 

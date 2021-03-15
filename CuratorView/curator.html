@@ -4,13 +4,14 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="curator.css" rel="stylesheet">
+    <script src="curator.js" defer></script>
     <meta charset="utf-8">
     <meta name="author" content="Michael Makarenko">
     <meta name="description"
     content="The Curator View aims to display all necessary information and provide
     funcionality for the curator of the Elderly Person.">
     
-    <title>InformaTV</title>
+    <title>InformaTV: Curator</title>
 
   </head>
   <body>
@@ -18,28 +19,59 @@
     <h1>Curator View</h1>
     <br>
 
-    <div class="cvtoprow">
-      <img src="images/TCmembership.jpg" alt="Placeholder1">
-      <br>
-      <form action="">
-        <label for="TCmemb">Choose a Trusted Circle Member:</label>
-        <br>
-        <select class="cvMembList" id="TCmemb" name="TCmemb">
-          <option value="TCmemb1">Friend</option>
-          <option value="TCmemb2">Brother</option>
-          <option value="TCmemb3">Sister</option>
-        </select>
-        <input class="AddBtn" type="button" value="Add" onclick="alert('Added Trusted Circle Member')">
-        <input class="RemBtn" type="button" value="Remove" onclick="alert('Removed Trusted Circle Member')">
-      </form>
+    <div class="cvTopRow">
+      <div id="TCListTop" class="listHeader">
+        <h2>Trusted Circle Members</h2>
+        <input type="text" id="NewMemb" placeholder="Name (Relation)">
+        <span onclick="newElement()" class="Add">Add</span>
+      </div>
+
+      <ul id="TCMembList">
+        <li>Bobby (Friend)</li>
+        <li>Caolán (Son)</li>
+        <li>Leila (Daughter)</li>
+      </ul>
     </div>
 
-    <div class="cvtoprow">
-    <img class="cvContent" src="images/ElderContent.jpg" alt="Placeholder2">
+    <div class="cvTopRow">
+      <img class="cvContent" src="images/ElderContent.jpg" alt="Placeholder1">
     </div>
     <br>
     
-    <img class="cvPanel" src="images/ControlPanel.jpg" alt="Placeholder3">
+    <img class="cvPanel" src="images/ControlPanel.jpg" alt="Placeholder2">
+    <br>
+
+    <div class="RemMsg">
+    
+      <div class="Reminders">
+        <div id="RemListTop" class="listHeader">
+          <h2>Reminders</h2>
+          <input type="text" id="NewRem" placeholder="Reminder">
+          <span onclick="newElement()" class="Add">Add</span>
+        </div>
+
+        <ul id="RemList">
+          <li>Call Linda</li>
+          <li>Max visits tomorrow</li>
+        </ul>
+      </div>
+
+      <div class="Messages">
+        <div class="MsgT">
+          <h2>Messages</h2>
+          <img src="images/TCtext.jpg" alt="Placeholder3">
+        </div>
+
+        <div class="MsgB">
+          <form action="">
+            <label for="newmsg">Send a message:</label>
+            <br>
+            <input class="txtbox" type="text" id="newreminder" name="newreminder">
+            <input class="SndBtn" type="button" value="Send" onclick="alert('Message Sent')">
+          </form>
+        </div>
+      </div>
+    </div>
 
   </body>
 </html>

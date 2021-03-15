@@ -1,8 +1,13 @@
-/*top stuff*/
+/*Document & Body*/
 
 .curator
 {
     font-family: "Open Sans", sans-serif;
+}
+
+.curator *
+{
+    box-sizing: border-box;
 }
 
 .curator body
@@ -10,8 +15,10 @@
     background-color: steelblue;
     padding: 0px;
     margin: 0px;
-    background: linear-gradient(90deg, dimgrey 25%,  steelblue 26%)
+    background: linear-gradient(90deg, dimgrey 24%,  steelblue 25%)
 }
+
+/*Page Title*/
 
 .curator h1
 {
@@ -19,39 +26,105 @@
     color: khaki;
     font-size: 60px;
     margin: 0;
-    padding: 0px 0;
+    padding: 0;
     text-shadow: 3px 3px 1px black;
 }
 
-/*small text*/
+/*TODO: make proper sidebar*/
 
-.curator label, .curator option, .curator input, .curator select
-{
-    color: khaki;
-    font-size: 20px;
-    line-height: 2;
-    letter-spacing: 1px;
-}
-
-/*main stuff*/
-
-.cvtoprow
+.cvTopRow
 {
     display: inline-block;
-    padding: 30px;
 }
 
-select.cvMembList
+/*Trusted Circle Member List*/
+
+.listHeader
 {
-    background-color: steelblue;
-    height: 45px;
+    background-color: rgb(56, 56, 56);
+    padding: 30px 40px;
+    color: khaki;
+    text-align: center;
 }
+.listHeader:after
+{
+    content: "";
+    display: table;
+    clear: both;
+}
+.listHeader input
+{
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 18px;
+    color: rgb(56, 56, 56);
+}
+span.Add
+{
+    padding: 8px;
+    width: 25%;
+    background: green;
+    float: left;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+}
+.Add:hover
+{
+    background-color: lightgreen;
+}
+.close
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+.close:hover
+{
+    background-color: #f44336;
+    color: white;
+}
+.curator ul
+{
+    margin: 0;
+    padding: 0;
+}
+.cvTopRow ul li
+{
+    cursor: pointer;
+    list-style-type: none;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background-color: steelblue;
+    color: khaki;
+    font-size: 18px;
+    transition: 0.2s;
+}
+.cvTopRow ul li:nth-child(odd)
+{
+    background-color: #43add0;
+}
+.cvTopRow ul li:hover
+{
+    background-color: #0033cc;
+}
+
+/*Content View*/
 
 .cvContent
 {
     position: relative;
-    left: 133px;
+    left: 200px;
 }
+
+/*Control Panel*/
 
 .cvPanel
 {
@@ -60,14 +133,74 @@ select.cvMembList
     padding: 30px;
 }
 
-/*buttons*/
+/*Reminders and Messages*/
+
+.Reminders ul li
+{
+    cursor: pointer;
+    list-style-type: none;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background-color: rgb(77, 103, 185);
+    color: khaki;
+    font-size: 18px;
+    transition: 0.2s;
+}
+.Reminders ul li:nth-child(odd)
+{
+    background-color: rgb(40, 110, 150);
+}
+.Reminders ul li:hover
+{
+    background-color: rgb(22, 49, 97);
+}
+
+.RemMsg
+{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    grid-auto-rows: 100px;
+    grid-template-areas:
+      "c c a a a b b b"
+      "c c a a a b b b"
+      "c c a a a b b b"
+      "c c a a a b b b";
+    align-items: start;
+}
+.Reminders
+{
+    grid-area: a;
+}
+.Messages
+{
+    grid-area: b;
+    text-align: center;
+}
+
+.Messages h2
+{
+    color: khaki;
+    text-decoration: solid;
+}
+.Messages label, .Messages input
+{
+    color: khaki;
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+input.txtbox, select.rmndrList
+{
+    background-color: dimgrey;
+}
 
 input.AddBtn
 {
     background-color: green;
     cursor: pointer;
 }
-
 input.AddBtn:hover
 {
     background-color: lightgreen;
@@ -78,8 +211,17 @@ input.RemBtn
     background-color: darkred;
     cursor: pointer;
 }
-
 input.RemBtn:hover
 {
     background-color: red;
+}
+
+input.SndBtn
+{
+    background-color: dimgrey;
+    cursor: pointer;
+}
+input.SndBtn:hover
+{
+    background-color: darkgrey;
 }
