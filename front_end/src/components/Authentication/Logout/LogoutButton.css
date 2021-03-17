@@ -1,12 +1,31 @@
 ul {
-  padding:0;
-  list-style:none;
+  padding: 0;
+  list-style: none;
   width: 30%;
-  margin:auto;
+  margin: auto;
 }
 
-li{
-  font-size:1.2rem;
+li {
+  font-size: 1.2rem;
   line-height: 2rem;
   border-bottom: 1px dotted #777;
+}
+
+.logout-button {
+  display: grid;
+  margin: auto;
+  width: 20%;
+  border: none;
+  background-color: blue;
+  padding: 14px 28px;
+  font-size: 22px;
+  cursor: pointer;
+  text-align: center;
+  transition-duration: 0.4s;
+  color: black;
+}
+
+.logout-button:hover {
+  background-color: red;
+  color: white;
 }
