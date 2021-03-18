@@ -3,8 +3,8 @@
   <head>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"><!--Font-->
-    <link href="trusted_circle.css" rel="stylesheet"><!--CSS-->
-    <script src="trusted_circle.js" defer></script><!--JS-->
+    <link href="styles.css" rel="stylesheet"><!--CSS-->
+    <script src="scripts.js" defer></script><!--JS-->
     <meta charset="utf-8"><!--encoding-->
     <meta name="authors" content="Michael Makarenko, "><!--authors-->
     <meta name="description" content="The Trusted Circle View aims to display all necessary information and provide
@@ -28,7 +28,7 @@
         <div id="RemListTop" class="listHeader">
           <h2>Reminders</h2>
           <input type="text" id="NewRem" placeholder="Reminder">
-          <span onclick="newElement()" class="Add">Add</span>
+          <span onclick="newReminder()" class="Add">Add</span>
         </div>
 
         <ul id="RemList">

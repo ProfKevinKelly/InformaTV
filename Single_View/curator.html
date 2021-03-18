@@ -3,8 +3,8 @@
   <head>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"><!--Font-->
-    <link href="curator.css" rel="stylesheet"><!--CSS-->
-    <script src="curator.js" defer></script><!--JS-->
+    <link href="styles.css" rel="stylesheet"><!--CSS-->
+    <script src="scripts.js" defer></script><!--JS-->
     <meta charset="utf-8"><!--encoding-->
     <meta name="author" content="Michael Makarenko"><!--author-->
     <meta name="description"
@@ -23,7 +23,7 @@
       <div id="TCListTop" class="listHeader">
         <h2>Trusted Circle Members</h2>
         <input type="text" id="NewMemb" placeholder="Name (Relation)">
-        <span onclick="newElement()" class="Add">Add</span>
+        <span onclick="newCircleMemb()" class="Add">Add</span>
       </div>
 
       <ul id="TCMembList">
@@ -49,7 +49,7 @@
         <div id="RemListTop" class="listHeader">
           <h2>Reminders</h2>
           <input type="text" id="NewRem" placeholder="Reminder">
-          <span onclick="newElement()" class="Add">Add</span>
+          <span onclick="newReminder()" class="Add">Add</span>
         </div>
 
         <ul id="RemList">

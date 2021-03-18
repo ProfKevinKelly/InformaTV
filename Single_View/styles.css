@@ -1,40 +1,72 @@
 /*Document & Body*/
 
-.curator
+html
 {
     font-family: "Open Sans", sans-serif;
 }
 
-.curator *
+*
 {
     box-sizing: border-box;
 }
 
-.curator body
+body
 {
     background-color: steelblue;
     padding: 0px;
     margin: 0px;
+}
+
+.TCircle body
+{
+    text-align: center;
+}
+
+.curator body
+{
     background: linear-gradient(90deg, dimgrey 24%,  steelblue 25%)
 }
 
 /*Page Title*/
 
-.curator h1
+h1
 {
     text-align: center;
     color: khaki;
     font-size: 60px;
     margin: 0;
-    padding: 0;
+    padding: 0px;
     text-shadow: 3px 3px 1px black;
 }
 
-/*TODO: make proper sidebar*/
+/*Trusted Circle Content View*/
+
+.tcVid
+{
+    padding: 20px;
+}
+
+/*Top row of items*/
 
 .cvTopRow
 {
     display: inline-block;
+}
+
+/*Curator Content View*/
+
+.cvContent
+{
+    position: relative;
+    left: 20px;
+}
+
+/*Control Panel*/
+
+.cvPanel
+{
+    position: relative;
+    left: 20px;
 }
 
 /*Trusted Circle Member List*/
@@ -57,7 +89,7 @@
     margin: 0;
     border: none;
     border-radius: 0;
-    width: 75%;
+    width: 70%;
     padding: 10px;
     float: left;
     font-size: 18px;
@@ -66,7 +98,7 @@
 span.Add
 {
     padding: 8px;
-    width: 25%;
+    width: 20%;
     background: green;
     float: left;
     text-align: center;
@@ -91,7 +123,7 @@ span.Add
     background-color: #f44336;
     color: white;
 }
-.curator ul
+ul
 {
     margin: 0;
     padding: 0;
@@ -116,22 +148,6 @@ span.Add
     background-color: #0033cc;
 }
 
-/*Content View*/
-
-.cvContent
-{
-    position: relative;
-    left: 20px;
-}
-
-/*Control Panel*/
-
-.cvPanel
-{
-    position: relative;
-    left: 20px;
-}
-
 /*Reminders and Messages*/
 
 .Reminders ul li
@@ -154,7 +170,17 @@ span.Add
     background-color: rgb(22, 49, 97);
 }
 
-.RemMsg
+.TCircle .RemMsg
+{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    grid-auto-rows: 100px;
+    grid-template-areas:
+      "c a a a b b b b";
+    align-items: start;
+}
+.curator .RemMsg
 {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -170,8 +196,8 @@ span.Add
 }
 .Messages
 {
-    grid-area: b;
     text-align: center;
+    grid-area: b;
 }
 
 .Messages h2
@@ -192,26 +218,6 @@ span.Add
 input.txtbox, select.rmndrList
 {
     background-color: dimgrey;
-}
-
-input.AddBtn
-{
-    background-color: green;
-    cursor: pointer;
-}
-input.AddBtn:hover
-{
-    background-color: lightgreen;
-}
-
-input.RemBtn
-{
-    background-color: darkred;
-    cursor: pointer;
-}
-input.RemBtn:hover
-{
-    background-color: red;
 }
 
 input.SndBtn
