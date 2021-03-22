@@ -1,62 +1,88 @@
-h1 {
+h1{
     color:white;
     text-align: left;
-    font-size: 50px;
+    font-size: 30px;
     margin-left: 45px;
+}
+
+p{
+    color: white;
+    font-size: 20px;
 }
 
 body {
     height: 100%;
-    background: linear-gradient(90deg, dimgrey 30%,  steelblue 30%)
+    background: linear-gradient(90deg,  #214C84 22%, #221F1F 20%)
 }
 
-.sideButtons button{
-   background-color:whitesmoke;
-   border: 1px solid black;
-   color:black;
-   padding: 10px 24px;
-   cursor: pointer;
-   height: 55px;
-   width: 20%;
-   margin: 50px;
-   display: block;
-   position:relative;
-   top: -225px;
+
+.sideButtons {
+    display: block;
+    padding: 10px 24px;
 }
 
-.sideButtons button:hover {
-    background-color: black;
-    color:whitesmoke;
+.sideBtn{
+    background: #545454;
+    text-color: white;
+    position:relative;
+    flex: 0 0 19.7%;
+    left: 10px;
+    top: -190px;
+    height: 100px;
+    width: 180px;
+    margin-bottom: 10px;
+    text-align:center;
+    transition:transform 300ms ease 200ms
 }
 
-.images{
+.sideButtons:hover .sideBtn {
+    transform: translateY(-10%);
+}
+
+.sideBtn:hover ~.sideBtn{
+    transform: translateY(10%);
+} 
+
+.sideBtn:hover {
+    transform: scale(1.2) !important;
+}
+
+.media{
  display: flex;
 }
 
-.leftImage {
-    margin-left: 45px;
+.weatherApi {
+    margin-left: 2.5px;
 }
 
-.rightImage{
+.video{
     margin-left: 100px;
 }
 
-
-.bottomButtons button{
-   background-color:dimgrey;
-   border: 1px solid black;
-   color:whitesmoke;
-   padding: 10px 54px;
-   cursor: pointer;
-   width: 27%;
-   margin: 50px;
-   height: 60px;
-   position:relative;
-   left: 350px;
-   top: -383px;
+.bottomButtons{
+    display: flex;
+    padding: 10px 54px;
 }
 
-.bottomButtons button:hover {
-    background-color: black;
-    color:whitesmoke;
+.bottomBtn{
+    background: green;
+    position:relative;
+    flex: 0 0 19.7%;
+    left: 225px;
+    top: -325px;
+    height: 100px;
+    margin:5px;
+    transition:transform 300ms ease 200ms
+}
+
+.bottomBtn:hover .bottomBtn {
+    transform: translateX(-10%);
+}
+
+.bottomBtn:hover ~.bottomBtn{
+    transform: translateX(10%);
+} 
+
+.bottomBtn:hover {
+    transform: scale(1.2) !important;
 }
