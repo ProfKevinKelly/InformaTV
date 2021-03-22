@@ -5,6 +5,7 @@ import Customers from './components/customers';
 import LoginButton from './components/Authentication/Login/LoginButton';
 import LogoutButton from './components/Authentication/Logout/LogoutButton';
 import Profile from './components/Authentication/Profile/Profile';
+import Weather from './components/Weather/Weather';
 import './components/Authentication/Login/LoginButton.css'
 import './components/Authentication/Logout/LogoutButton.css'
 

@@ -18,6 +18,8 @@ app.get('/customers', cors(), (req, res) => {
   res.json(customers);
 });
 
-const port = 5000;
+//process.env.port gets the port used, this is goood if we are going to deploy a server because a port can
+//change depending on server so it will check if a server has a specific port, if not it will use port 5000
+const port = process.env.port || 5000; 
 
 app.listen(port, () => `Server running on port ${port}`);
