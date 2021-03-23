@@ -37,16 +37,16 @@ const Profile = () =>{
           if(userType.length!=0){
             console.log("HERE", userType[0]);
             if(userType[0].userType==1){ // If it is an elderly user
+              console.log("I am an elderly user");
               fetch('http://localhost:5000/api/getElderlyPortal/?id='+id)
               .then(res => res.json())
               .then(result => console.log('Result = ', result.response));  //Route to elderly screen
             }
             else if (userType[0].userType==2){// If it is a Curator
-              fetch('http://localhost:5000/api/getCurator/?id='+id)
-              .then(res => res.json())
-              .then(result => console.log('Result = ', result.response));  //Route to curator screen
+              console.log("I am a curator");
             }
             else if (userType[0].userType==3){// If it is a Close circle member
+              console.log("I am a close circle member");
               fetch('http://localhost:5000/api/getCloseCircle/?id='+id)
               .then(res => res.json())
               .then(result => console.log('Result = ', result.response));  //Route to close circle screen

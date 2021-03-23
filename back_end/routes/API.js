@@ -58,13 +58,7 @@ router.get('/getReminders', function(req, res, next) {
 		res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
 	});
 });
-router.get('/getCloseCircle', cors(), function(req, res, next) {
-	let id = req.query.id;
-	db.conn.query('SELECT * FROM test.CloseCirlcle WHERE id = "' + id.toString() + '"', function (error, results, fields) {
-		if (error) throw error;
-		res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
-	});
-});
+
 router.get('/getCloseCircleMessages', function(req, res, next) {
 	db.conn.query('SELECT * FROM test.CloseCirlcleMessages', function (error, results, fields) {
 		if (error) throw error;
