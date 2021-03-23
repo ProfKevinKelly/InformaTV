@@ -1,0 +1,344 @@
+/*Document & Body*/
+
+html
+{
+    font-family: "Open Sans", sans-serif;
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: steelblue;
+    padding: 0px;
+    margin: 0px;
+}
+
+.TCircle body
+{
+    text-align: center;
+}
+
+.index body
+{
+    text-align: center;
+}
+
+.curator body
+{
+    background: linear-gradient(90deg, dimgrey 24%,  steelblue 25%)
+}
+
+/*Page Title*/
+
+h1
+{
+    text-align: center;
+    color: khaki;
+    font-size: 60px;
+    margin: 0;
+    padding: 0px;
+    text-shadow: 3px 3px 1px black;
+}
+
+/*index*/
+
+.index button
+{
+    color: khaki;
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+    background-color: dimgrey;
+    cursor: pointer;
+}
+
+.index button:hover
+{
+    background-color: grey;
+}
+
+/*Trusted Circle Content View*/
+
+.tcVid
+{
+    padding: 20px;
+}
+
+/*Top row of items*/
+
+.cvTopRow
+{
+    display: inline-block;
+}
+
+/*Curator Content View*/
+
+.cvContent
+{
+    position: relative;
+    left: 200px;
+}
+
+/*Control Panel*/
+
+.cvPanel
+{
+    position: relative;
+    left: 300px;
+}
+
+/*Trusted Circle Member List*/
+
+.listHeader
+{
+    background-color: rgb(56, 56, 56);
+    padding: 30px 40px;
+    color: khaki;
+    text-align: center;
+}
+.listHeader:after
+{
+    content: "";
+    display: table;
+    clear: both;
+}
+.listHeader input
+{
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 70%;
+    padding: 10px;
+    float: left;
+    font-size: 18px;
+    color: rgb(56, 56, 56);
+}
+span.Add
+{
+    padding: 8px;
+    width: 20%;
+    background: green;
+    float: left;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+}
+.Add:hover
+{
+    background-color: lightgreen;
+}
+.close
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+.close:hover
+{
+    background-color: #f44336;
+    color: white;
+}
+ul
+{
+    margin: 0;
+    padding: 0;
+}
+.cvTopRow ul li
+{
+    cursor: pointer;
+    list-style-type: none;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background-color: steelblue;
+    color: khaki;
+    font-size: 18px;
+    transition: 0.2s;
+}
+.cvTopRow ul li:nth-child(odd)
+{
+    background-color: #43add0;
+}
+.cvTopRow ul li:hover
+{
+    background-color: #0033cc;
+}
+
+/*Reminders and Messages*/
+
+.Reminders ul li
+{
+    cursor: pointer;
+    list-style-type: none;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background-color: rgb(77, 103, 185);
+    color: khaki;
+    font-size: 18px;
+    transition: 0.2s;
+}
+.Reminders ul li:nth-child(odd)
+{
+    background-color: rgb(40, 110, 150);
+}
+.Reminders ul li:hover
+{
+    background-color: rgb(22, 49, 97);
+}
+
+.TCircle .RemMsg
+{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    grid-auto-rows: 100px;
+    grid-template-areas:
+      "c a a a b b b b";
+    align-items: start;
+}
+.curator .RemMsg
+{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    grid-auto-rows: 100px;
+    grid-template-areas:
+      "c c a a a b b b";
+    align-items: start;
+}
+.Reminders
+{
+    grid-area: a;
+}
+.Messages
+{
+    text-align: center;
+    grid-area: b;
+}
+
+.Messages h2
+{
+    color: khaki;
+    text-decoration: solid;
+    padding-bottom: 4px;
+    margin: 0;
+}
+.Messages label, .Messages input
+{
+    color: khaki;
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+input.txtbox, select.rmndrList
+{
+    background-color: dimgrey;
+}
+
+input.SndBtn
+{
+    background-color: dimgrey;
+    cursor: pointer;
+}
+input.SndBtn:hover
+{
+    background-color: darkgrey;
+}
+
+/*elderly person view main page css*/
+.header{
+    color:white;
+    text-align: left;
+    font-size: 15px;
+    margin-left: 45px;
+}
+
+p{
+    color: white;
+    font-size: 20px;
+}
+
+.backg{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg,  #214C84 22%, #221F1F 20%)
+}
+
+
+.sideButtons {
+    display: block;
+    padding: 10px 24px;
+}
+
+.sideBtn{
+    background: #545454;
+    color: white;
+    position:relative;
+    flex: 0 0 19.7%;
+    left: 10px;
+    top: -190px;
+    height: 100px;
+    width: 180px;
+    margin-bottom: 10px;
+    text-align:center;
+    transition:transform 300ms ease 200ms
+}
+
+.sideButtons:hover .sideBtn {
+    transform: translateY(-10%);
+}
+
+.sideBtn:hover ~.sideBtn{
+    transform: translateY(10%);
+} 
+
+.sideBtn:hover {
+    transform: scale(1.2) !important;
+}
+
+.media{
+ display: flex;
+}
+
+.weatherApi {
+    margin-left: 2.5px;
+}
+
+.video{
+    margin-left: 100px;
+}
+
+.bottomButtons{
+    display: flex;
+    padding: 10px 54px;
+}
+
+.bottomBtn{
+    background: green;
+    position:relative;
+    flex: 0 0 19.7%;
+    left: 225px;
+    top: -325px;
+    height: 100px;
+    margin:5px;
+    transition:transform 300ms ease 200ms
+}
+
+.bottomBtn:hover .bottomBtn {
+    transform: translateX(-10%);
+}
+
+.bottomBtn:hover ~.bottomBtn{
+    transform: translateX(10%);
+} 
+
+.bottomBtn:hover {
+    transform: scale(1.2) !important;
+}
