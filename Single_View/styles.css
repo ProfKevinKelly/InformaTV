@@ -58,7 +58,7 @@ h1
 .cvContent
 {
     position: relative;
-    left: 20px;
+    left: 200px;
 }
 
 /*Control Panel*/
@@ -66,7 +66,7 @@ h1
 .cvPanel
 {
     position: relative;
-    left: 20px;
+    left: 300px;
 }
 
 /*Trusted Circle Member List*/
