@@ -38,14 +38,16 @@ router.get('/getTokenCheckAuthenticated', cors(), checkJwt, function(req, res) {
 router.get('/getTokenCheck', cors(), function(req, res, next) {
 	res.send(JSON.stringify({"status": 200, "error": null, "response": "WORKED"}));
 });
-router.get('/getCurator', function(req, res, next) {
-	db.conn.query('SELECT * FROM test.Curator', function (error, results, fields) {
+router.get('/getCurator', cors(), function(req, res, next) {
+	let id = req.query.id;
+	db.conn.query('SELECT * FROM test.Curator WHERE id = "' + id.toString() + '"', function (error, results, fields) {
 		if (error) throw error;
 		res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
 	});
 });
-router.get('/getElderlyPortal', function(req, res, next) {
-	db.conn.query('SELECT * FROM test.ElderlyPortal', function (error, results, fields) {
+router.get('/getElderlyPortal', cors(), function(req, res, next) {
+	let id = req.query.id;
+	db.conn.query('SELECT * FROM test.ElderlyPortal WHERE curatorID = "' + id.toString() + '"', function (error, results, fields) {
 		if (error) throw error;
 		res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
 	});
@@ -56,14 +58,23 @@ router.get('/getReminders', function(req, res, next) {
 		res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
 	});
 });
-router.get('/getCloseCircle', function(req, res, next) {
-	db.conn.query('SELECT * FROM test.CloseCirlcle', function (error, results, fields) {
+router.get('/getCloseCircle', cors(), function(req, res, next) {
+	let id = req.query.id;
+	db.conn.query('SELECT * FROM test.CloseCirlcle WHERE id = "' + id.toString() + '"', function (error, results, fields) {
 		if (error) throw error;
 		res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
 	});
 });
 router.get('/getCloseCircleMessages', function(req, res, next) {
 	db.conn.query('SELECT * FROM test.CloseCirlcleMessages', function (error, results, fields) {
+		if (error) throw error;
+		res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
+	});
+});
+router.get('/checkUserExists', cors(), function(req, res, next) {
+	console.log("ID = ",req.query.id);
+	let id = req.query.id;
+	db.conn.query('SELECT userType FROM test.Users WHERE id = "' + id.toString() + '"', function (error, results, fields) {
 		if (error) throw error;
 		res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
 	});
