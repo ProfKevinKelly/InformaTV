@@ -22,6 +22,11 @@ body
     text-align: center;
 }
 
+.index body
+{
+    text-align: center;
+}
+
 .curator body
 {
     background: linear-gradient(90deg, dimgrey 24%,  steelblue 25%)
@@ -37,6 +42,23 @@ h1
     margin: 0;
     padding: 0px;
     text-shadow: 3px 3px 1px black;
+}
+
+/*index*/
+
+.index button
+{
+    color: khaki;
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+    background-color: dimgrey;
+    cursor: pointer;
+}
+
+.index button:hover
+{
+    background-color: grey;
 }
 
 /*Trusted Circle Content View*/
