@@ -13,16 +13,16 @@ li {
 
 .login-button {
   display: grid;
-  margin: auto;
-  width: 20%;
+  width: 10%;
   border: none;
   background-color: blue;
-  padding: 14px 28px;
+  padding: 5px;
   font-size: 22px;
   cursor: pointer;
   text-align: center;
   transition-duration: 0.4s;
   color: black;
+  float: right;
 }
 
 .login-button:hover {
