@@ -1,5 +1,5 @@
 import React, { Component, useEffect } from 'react';
-import .env;
+
 
 const Weather = () =>{
     //residence

@@ -12,7 +12,7 @@ import ElderlyPortal from './components/ElderlyPortal/ElderlyPortal';
 import LoginButton from './components/Authentication/Login/LoginButton';
 import LogoutButton from './components/Authentication/Logout/LogoutButton';
 import Profile from './components/Authentication/Profile/Profile';
-import Weather from './components/Weather/Weather';
+import Weather from './components/Weather/weather';
 import './components/Authentication/Login/LoginButton.css'
 import './components/Authentication/Logout/LogoutButton.css'
 import Curator from './components/Curator/Curator';
