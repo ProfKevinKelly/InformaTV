@@ -61,13 +61,6 @@ h1
     background-color: grey;
 }
 
-/*Trusted Circle Content View*/
-
-.tcVid
-{
-    padding: 20px;
-}
-
 /*Top row of items*/
 
 .cvTopRow
@@ -192,15 +185,10 @@ ul
     background-color: rgb(22, 49, 97);
 }
 
-.TCircle .RemMsg
+.TCircle .Reminders
 {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 10px;
-    grid-auto-rows: 100px;
-    grid-template-areas:
-      "c a a a b b b b";
-    align-items: start;
+    margin-left: 30%;
+    margin-right: 30%;
 }
 .curator .RemMsg
 {
