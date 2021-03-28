@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../styles.css';
 import TCtext from '../images/TCtext.jpg';
+import List from "../List/List";
 
 class TrustedCircle extends Component {
   constructor() {
@@ -42,17 +43,8 @@ class TrustedCircle extends Component {
             </div>
             <br></br>
             
-            <div class="Reminders">
-              <div id="RemListTop" class="listHeader">
-                <h2>Reminders</h2>
-                <input type="text" id="NewRem" placeholder="Reminder"></input>
-                <span /*onclick={newReminder()}*/ class="Add">Add</span>
-              </div>
-
-              <ul id="RemList">
-                <li>Call Linda</li>{/* <!--placeholder reminder--> */}
-                <li>Max visits tomorrow</li>{/* <!--placeholder reminder--> */}
-              </ul>
+            <div className="Remlist">
+              <List listName="Reminders" itemName="Reminder"/>
             </div>
 
           </div>

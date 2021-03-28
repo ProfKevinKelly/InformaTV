@@ -3,6 +3,7 @@ import '../../styles.css';
 import ControlPanel from '../images/ControlPanel.jpg';
 import ElderContent from '../images/ElderContent.jpg';
 import TCtext from '../images/TCtext.jpg';
+import List from "../List/List";
 
 class Curator extends Component {
   constructor() {
@@ -27,16 +28,9 @@ class Curator extends Component {
           <br/>
           {/* <!--Trusted Circle Members list--> */}
           <div class="cvTopRow">
-            <div id="TCListTop" class="listHeader">
-              <h2>Trusted Circle Members</h2>
-              <input type="text" id="NewMemb" placeholder="Name (Relation)"/>
-              <span onclick="newCircleMemb()" class="Add">Add</span>
+            <div className="TClist">
+              <List listName="Trusted Circle Members" itemName="Name (Relation)"/>
             </div>
-            <ul id="TCMembList">
-              <li>Bobby (Friend)</li>
-              <li>Caolán (Son)</li>
-              <li>Leila (Daughter)</li>
-            </ul>
           </div>
           <div class="cvTopRow">
             {/* <!--Elderly Person's video content--> */}
@@ -48,17 +42,9 @@ class Curator extends Component {
 
           {/* <!--Reminders & Messages, as in trusted_circle.html--> */}
           <div class="RemMsg">
-            <div class="Reminders">
-              <div id="RemListTop" class="listHeader">
-                <h2>Reminders</h2>
-                <input type="text" id="NewRem" placeholder="Reminder"/>
-                <span onclick="newReminder()" class="Add">Add</span>
-              </div>
 
-              <ul id="RemList">
-                <li>Call Linda</li>
-                <li>Max visits tomorrow</li>
-              </ul>
+            <div className="Remlist">
+              <List listName="Reminders" itemName="Reminder"/>
             </div>
 
             <div class="Messages">
@@ -76,6 +62,7 @@ class Curator extends Component {
                 </form>
               </div>
             </div>
+
           </div>
 
         </body>
