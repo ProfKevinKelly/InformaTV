@@ -1,88 +1,76 @@
 /*Document & Body*/
 
-html
-{
-    font-family: "Open Sans", sans-serif;
+html {
+  font-family: "Open Sans", sans-serif;
 }
 
-*
-{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body
-{
-    background-color: steelblue;
-    padding: 0px;
-    margin: 0px;
+body {
+  background-color: steelblue;
+  padding: 0px;
+  margin: 0px;
 }
 
-.TCircle body
-{
-    text-align: center;
+.TCircle body {
+  text-align: center;
 }
 
-.index body
-{
-    text-align: center;
+.index body {
+  text-align: center;
 }
 
-.curator body
-{
-    text-align: left;
-    /*background: linear-gradient(90deg, dimgrey 24%,  steelblue 25%)*/
+.curator body {
+  text-align: left;
+  /*background: linear-gradient(90deg, dimgrey 24%,  steelblue 25%)*/
 }
 
 /*Page Title*/
 
-h1
-{
-    text-align: center;
-    color: khaki;
-    font-size: 60px;
-    margin: 0;
-    padding: 0px;
-    text-shadow: 3px 3px 1px black;
+h1 {
+  text-align: center;
+  color: khaki;
+  font-size: 60px;
+  margin: 0;
+  padding: 0px;
+  text-shadow: 3px 3px 1px black;
 }
 
 /*index*/
 
-.index button
-{
-    color: khaki;
-    font-size: 16px;
-    line-height: 2;
-    letter-spacing: 1px;
-    background-color: dimgrey;
-    cursor: pointer;
+.index button {
+  color: khaki;
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 1px;
+  background-color: dimgrey;
+  cursor: pointer;
 }
 
-.index button:hover
-{
-    background-color: grey;
+.index button:hover {
+  background-color: grey;
 }
 
 /*Top row of items*/
 
-.cvTopRow 
-{
-    display: inline-block;
+.cvTopRow {
+  display: inline-block;
 }
 
 /*Curator Content View*/
 
-.cvContent
-{
-    position: relative;
-    left: 200px;
+.cvContent {
+  position: relative;
+  left: 200px;
 }
 
 /*Control Panel*/
 
-.cvPanel
-{
-    position: relative;
-    left: 300px;
+.cvPanel {
+  position: relative;
+  left: 300px;
 }
 
 /*Trusted Circle Member List
@@ -186,152 +174,143 @@ ul
     background-color: rgb(22, 49, 97);
 }*/
 
-.TCircle .Remlist
-{
-    margin-left: 40%;
-    margin-right: 40%;
+.TCircle .Remlist {
+  margin-left: 40%;
+  margin-right: 40%;
 }
-.curator .RemMsg
-{
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 10px;
-    grid-auto-rows: 100px;
-    grid-template-areas:
-      "c a a a b b b";
-    align-items: start;
+.curator .RemMsg {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+  grid-auto-rows: 100px;
+  grid-template-areas: "c a a a b b b";
+  align-items: start;
 }
-.curator .Remlist
-{
-    margin-left: 22%;
-    margin-right: 22%;
-    grid-area: a;
+.curator .Remlist {
+  margin-left: 22%;
+  margin-right: 22%;
+  grid-area: a;
 }
-.Messages
-{
-    text-align: center;
-    grid-area: b;
+.Messages {
+  text-align: center;
+  grid-area: b;
 }
 
-.Messages h2
-{
-    color: khaki;
-    text-decoration: solid;
-    padding-bottom: 4px;
-    margin: 0;
+.Messages h2 {
+  color: khaki;
+  text-decoration: solid;
+  padding-bottom: 4px;
+  margin: 0;
 }
-.Messages label, .Messages input
-{
-    color: khaki;
-    font-size: 16px;
-    line-height: 2;
-    letter-spacing: 1px;
-    margin-right: 2px;
-    margin-bottom: 10px;
-}
-
-input.txtbox, select.rmndrList
-{
-    background-color: dimgrey;
+.Messages label,
+.Messages input {
+  color: khaki;
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 1px;
+  margin-right: 2px;
+  margin-bottom: 10px;
 }
 
-input.SndBtn
-{
-    background-color: dimgrey;
-    cursor: pointer;
+input.txtbox,
+select.rmndrList {
+  background-color: dimgrey;
 }
-input.SndBtn:hover
-{
-    background-color: darkgrey;
+
+input.SndBtn {
+  background-color: dimgrey;
+  cursor: pointer;
+}
+input.SndBtn:hover {
+  background-color: darkgrey;
 }
 
 /*elderly person view main page css*/
-.header{
-    color:white;
-    text-align: left;
-    font-size: 15px;
-    margin-left: 45px;
+.header {
+  color: white;
+  text-align: left;
+  font-size: 15px;
+  margin-left: 45px;
 }
 
-p{
-    color: white;
-    font-size: 20px;
+p {
+  color: white;
+  font-size: 20px;
 }
 
-.backg{
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(90deg,  #214C84 22%, #221F1F 20%)
+.backg {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #214c84 22%, #221f1f 20%);
 }
-
 
 .sideButtons {
-    display: block;
-    padding: 10px 24px;
+  display: block;
+  padding: 10px 24px;
 }
 
-.sideBtn{
-    background: #545454;
-    color: white;
-    position:relative;
-    flex: 0 0 19.7%;
-    left: 10px;
-    top: -190px;
-    height: 100px;
-    width: 180px;
-    margin-bottom: 10px;
-    text-align:center;
-    transition:transform 300ms ease 200ms
+.sideBtn {
+  background: #545454;
+  color: white;
+  position: relative;
+  flex: 0 0 19.7%;
+  left: 10px;
+  top: -190px;
+  height: 100px;
+  width: 180px;
+  margin-bottom: 10px;
+  text-align: center;
+  transition: transform 300ms ease 200ms;
 }
 
 .sideButtons:hover .sideBtn {
-    transform: translateY(-10%);
+  transform: translateY(-10%);
 }
 
-.sideBtn:hover ~.sideBtn{
-    transform: translateY(10%);
-} 
+.sideBtn:hover ~ .sideBtn {
+  transform: translateY(10%);
+}
 
 .sideBtn:hover {
-    transform: scale(1.2) !important;
+  transform: scale(1.2) !important;
 }
 
-.media{
- display: flex;
+.media {
+  display: flex;
 }
 
 .weatherApi {
-    margin-left: 2.5px;
+  margin-left: 2.5px;
 }
 
-.video{
-    margin-left: 100px;
+.video {
+  margin-left: 150px;
 }
 
-.bottomButtons{
-    display: flex;
-    padding: 10px 54px;
+.bottomButtons {
+  display: flex;
+  padding: 10px 54px;
 }
 
-.bottomBtn{
-    background: green;
-    position:relative;
-    flex: 0 0 19.7%;
-    left: 225px;
-    top: -325px;
-    height: 100px;
-    margin:5px;
-    transition:transform 300ms ease 200ms
+.bottomBtn {
+  background: green;
+  position: relative;
+  flex: 0 0 19.7%;
+  left: 225px;
+  top: -325px;
+  height: 100px;
+  margin: 5px;
+  transition: transform 300ms ease 200ms;
 }
 
 .bottomBtn:hover .bottomBtn {
-    transform: translateX(-10%);
+  transform: translateX(-10%);
 }
 
-.bottomBtn:hover ~.bottomBtn{
-    transform: translateX(10%);
-} 
+.bottomBtn:hover ~ .bottomBtn {
+  transform: translateX(10%);
+}
 
 .bottomBtn:hover {
-    transform: scale(1.2) !important;
+  transform: scale(1.2) !important;
 }

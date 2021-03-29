@@ -16,7 +16,7 @@ class Reminders extends Component {
   }
 
   render() {
-    
+    <div class="Calendar"></div>
   }
 }
 
