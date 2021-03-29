@@ -284,7 +284,8 @@ p {
 }
 
 .video {
-  margin-left: 150px;
+  position: relative;
+  left: 300px;
 }
 
 .bottomButtons {
@@ -295,8 +296,8 @@ p {
 .bottomBtn {
   background: green;
   position: relative;
-  flex: 0 0 19.7%;
-  left: 225px;
+  flex: 0 0 15%;
+  left: 350px;
   top: -325px;
   height: 100px;
   margin: 5px;
