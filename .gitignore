@@ -1,2 +1,9 @@
 .idea/workspace.xml
 .idea/vcs.xml
+
+# Ignore Mac system files
+.DS_store
+
+# Ignore node_modules folder
+node_modules
+
