@@ -280,12 +280,12 @@ p {
 }
 
 .weatherApi {
-  margin-left: 2.5px;
+  margin-left: 10px;
 }
 
 .video {
   position: relative;
-  left: 300px;
+  left: 200px;
 }
 
 .bottomButtons {
