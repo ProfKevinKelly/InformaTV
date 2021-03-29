@@ -16,9 +16,11 @@ class Reminders extends Component {
   }
 
   render() {
+    return (
     <div class="Calendar">
       <iframe width="750" height="400" src="https://calendar.google.com/calendar"></iframe>
     </div>
+    );
   }
 }
 

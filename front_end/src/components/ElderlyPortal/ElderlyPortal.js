@@ -24,11 +24,11 @@ class ElderlyPortal extends Component {
 
   render() {
     return (
+      <Router>
       <div class="backg">
         <div class="header">
             <h1>InformaTV</h1>
         </div>
-
         <div class="media">
             <div class = "weatherApi" bg="#00000000">
                 {/* <!weather api--> */}
@@ -41,10 +41,7 @@ class ElderlyPortal extends Component {
         </div>
         <div class="sideButtons">
             <div class="sideBtn"><br/>
-              <button>Reminders</button>
-            </div>
-            <div class="sideBtn"><br/>
-              <p>Call</p>
+            <Link to="/Reminders" style={{padding:20}}>Reminders</Link>
             </div>
             <div class="sideBtn"><br/>
               <p>Message</p>
@@ -56,7 +53,13 @@ class ElderlyPortal extends Component {
             <div class="bottomBtn"><img src="https://thefederalist.com/wp-content/uploads/2017/07/Screen-Shot-2017-07-20-at-2.48.26-PM-998x661.png" width="100%" height="100%"/></div>
             <div class="bottomBtn"><img src="https://youthincmag.com/wp-content/uploads/2016/03/Gladiator-2000.jpg" width="100%" height="100%"/></div>
         </div>
+        <Switch>
+          <Route path="/Reminders">
+            <Reminders />
+          </Route>
+        </Switch>
       </div>
+      </Router>
     );
   }
 }

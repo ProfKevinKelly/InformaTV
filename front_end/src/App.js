@@ -40,8 +40,6 @@ class App extends Component {
             <Link to="/TrustedCircle" style={{padding:20}}>Trusted Circle</Link>
           </div>
         </header>
-        <div>
-        </div>
         <Switch>
           <Route path="/profile">
             <Profile />
