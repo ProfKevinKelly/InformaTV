@@ -242,21 +242,27 @@ input.SndBtn:hover
 
 /*elderly person view main page css*/
 .header{
-    color:white;
-    text-align: left;
+    background-color:steelblue;
     font-size: 15px;
-    margin-left: 45px;
+    margin-top: -23px;
+    margin-left: -8px;
+    padding-top: 5px;
 }
 
 p{
+    font-size: 40px;
+}
+
+h1{
     color: white;
-    font-size: 20px;
+    font-size: 30px;
+    margin: 20px;
 }
 
 .backg{
     height: 100%;
     width: 100%;
-    background: linear-gradient(90deg,  #214C84 22%, #221F1F 20%)
+    background: linear-gradient(-90deg,  #214C84 22%, #221F1F 20%)
 }
 
 
@@ -265,16 +271,30 @@ p{
     padding: 10px 24px;
 }
 
-.sideBtn{
-    background: #545454;
-    color: white;
-    position:relative;
+.currentPage{
+    background:steelblue;
+     position:relative;
     flex: 0 0 19.7%;
-    left: 10px;
-    top: -190px;
-    height: 100px;
-    width: 180px;
-    margin-bottom: 10px;
+    right: 240px;
+    top: 200px;
+    height: 65px;
+    width: 190px;
+    margin-bottom: 20px;
+    text-align:center;
+    transition:transform 300ms ease 200ms
+}
+
+.sideBtn{
+    position:relative;
+    background: #545454;
+    flex: 0 0 19.7%;
+    right: 240px;
+
+    
+ top: 200px;
+    height: 65px;
+    width: 190px;
+    margin-bottom: 20px;
     text-align:center;
     transition:transform 300ms ease 200ms
 }
@@ -296,37 +316,71 @@ p{
 }
 
 .weatherApi {
-    margin-left: 2.5px;
+    margin-right: 2.5px;
+    top:-60px;
 }
 
 .video{
-    margin-left: 100px;
+   margin-left:70px;
+   margin-top: 70px;
 }
 
-.bottomButtons{
-    display: flex;
-    padding: 10px 54px;
-}
-
-.bottomBtn{
-    background: green;
+.rhs {
     position:relative;
-    flex: 0 0 19.7%;
-    left: 225px;
-    top: -325px;
-    height: 100px;
-    margin:5px;
-    transition:transform 300ms ease 200ms
+    right: -925px;
+    top:-450px;
 }
 
-.bottomBtn:hover .bottomBtn {
-    transform: translateX(-10%);
+.tcontainer {
+        width: 78%;
+        overflow: hidden;
+        top: -301px;
+        position:relative;
+        left:-10px;
+        height: 30px;
+    }
+.ticker-wrap {
+        width: 78%;
+        padding-left: 100%;
+        background-color: #eee;
+        height: 30px;
+    }
+    
+    @keyframes ticker {
+        100% {
+            transform: translate3d(-100%, 0, 0);
+        }
+    }
+    
+    .ticker-move {
+        display: inline-block;
+        white-space: nowrap;
+        padding-right: 100%;
+        animation-timing-function: linear;
+        animation: ticker 40s infinite;
+    }
+    
+    .ticker-move:hover {
+        animation-play-state: paused;
+    }
+
+  .ticker-item {
+        display: inline-block;
+        padding: 0 40px;
+        font-size: 20px;
+    }
+
+.newsChannel{
+    background-color: steelblue;
+    position: relative;
+    top: -351px;
+    width: 150px;
+    height: 30.5px;
+    left: -9px;
 }
 
-.bottomBtn:hover ~.bottomBtn{
-    transform: translateX(10%);
-} 
-
-.bottomBtn:hover {
-    transform: scale(1.2) !important;
+h3{
+    padding-top: 20px;
+    color:white;
+    font-size: 20px;
 }
