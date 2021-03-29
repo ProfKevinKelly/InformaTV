@@ -35,7 +35,7 @@ class ElderlyPortal extends Component {
                 <img src="https://i.pinimg.com/originals/71/a4/17/71a417ad67f61d12019794659776448d.jpg" alt="Essential Info" width="240px" height="200px"/>
             </div>
             <div class="video">
-                <iframe width="750" height="400" src="http://www.youtube.com/embed/z0pNQY6DyXo?t=6">
+                <iframe width="750" height="400" src="https://www.rte.ie/bosco/components/player/iframe.html?clipid=7&thumbnail=00151820">
                 </iframe>
             </div>
         </div>
