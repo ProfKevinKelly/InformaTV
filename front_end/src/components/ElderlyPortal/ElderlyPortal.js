@@ -19,7 +19,7 @@ class ElderlyPortal extends Component {
     return (
       <div class="backg">
         <div class="header">
-            <h1>InformaTv</h1>
+            <h1>InformaTV</h1>
         </div>
 
         <div class="media">
