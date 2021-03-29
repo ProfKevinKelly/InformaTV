@@ -298,7 +298,7 @@ p {
   position: relative;
   flex: 0 0 15%;
   left: 350px;
-  top: -325px;
+  top: -200px;
   height: 100px;
   margin: 5px;
   transition: transform 300ms ease 200ms;
