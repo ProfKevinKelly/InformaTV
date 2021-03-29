@@ -16,7 +16,9 @@ class Reminders extends Component {
   }
 
   render() {
-    <div class="Calendar"></div>
+    <div class="Calendar">
+      <iframe width="750" height="400" src="https://calendar.google.com/calendar"></iframe>
+    </div>
   }
 }
 

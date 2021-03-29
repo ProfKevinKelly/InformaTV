@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 import '../../styles.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Reminders from '../Reminders/Reminders';
 
 class ElderlyPortal extends Component {
   constructor() {
@@ -33,9 +40,15 @@ class ElderlyPortal extends Component {
             </div>
         </div>
         <div class="sideButtons">
-            <div class="sideBtn"><br/><p>Reminders</p></div>
-            <div class="sideBtn"><br/><p>Call</p></div>
-            <div class="sideBtn"><br/><p>Message</p></div>
+            <div class="sideBtn"><br/>
+              <button>Reminders</button>
+            </div>
+            <div class="sideBtn"><br/>
+              <p>Call</p>
+            </div>
+            <div class="sideBtn"><br/>
+              <p>Message</p>
+            </div>
         </div>
         <div class ="bottomButtons">
             <div class="bottomBtn"><img src="https://img.freepik.com/free-vector/sports-news-with-abstract-background-sports-elements_1419-1926.jpg?size=626&ext=jpg" width="100%" height="100%"/></div>
