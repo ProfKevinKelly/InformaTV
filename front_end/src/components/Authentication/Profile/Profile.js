@@ -64,8 +64,8 @@ const Profile = () =>{
         isAuthenticated && (
         <div>
             <img src={user.picture} alt={user.name}></img>
-            <h2>{user.name}</h2>
-            <p>{user.email}</p>
+            <h2>Nickname: {user.nickname}</h2>
+            <p>Email: {user.email}</p>
             {JSON.stringify(user, null, 2)}
             <button onClick={() => checkUserExists(user.sub)}>Check User Exists</button>
 
