@@ -4,6 +4,12 @@ import ControlPanel from '../images/ControlPanel.jpg';
 import ElderContent from '../images/ElderContent.jpg';
 import TCtext from '../images/TCtext.jpg';
 import List from "../List/List";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 class Curator extends Component {
   constructor() {
@@ -21,52 +27,47 @@ class Curator extends Component {
 
   render() {
     return (
-      <div class="curator">
-        <body>
-
-          <h1>Curator View</h1>
-          <br/>
-          {/* <!--Trusted Circle Members list--> */}
-          <div class="cvTopRow">
-            <div className="TClist">
-              <List listName="Trusted Circle Members" itemName="Name (Relation)"/>
+      <Router>
+      <div class="backg">
+        <div class="header">
+            <h1>Curator View</h1>
+        </div>
+        <div class="media">
+            <div class = "weatherApi" bg="#00000000">
+                {/* <!weather api--> */}
+                <img src="https://i.pinimg.com/originals/71/a4/17/71a417ad67f61d12019794659776448d.jpg" alt="Essential Info" width="240px" height="200px"/>
             </div>
-          </div>
-          <div class="cvTopRow">
-            {/* <!--Elderly Person's video content--> */}
-            <img class="cvContent" src={ElderContent} alt="Placeholder1"/>
-            {/* <!--Panel for controlling what Elderly Person sees (maybe it needs its own page?)--> */}
-            <img class="cvPanel" src={ControlPanel} alt="Placeholder2"/>
-          </div>
-          <br/>
-
-          {/* <!--Reminders & Messages, as in trusted_circle.html--> */}
-          <div class="RemMsg">
-
-            <div className="Remlist">
-              <List listName="Reminders" itemName="Reminder"/>
+            <div class="video">
+                <iframe width="750" height="400" src="https://www.rte.ie/bosco/components/player/iframe.html?clipid=7&thumbnail=00151820">
+                </iframe>
             </div>
-
-            <div class="Messages">
-              <div class="MsgT">
-                <h2>Messages</h2>
-                <img src={TCtext} alt="Placeholder3"/>
+        </div>
+        <div class="sideButtons">
+            <div class="RemMsg">
+              <div className="TClist">
+                <List listName="Trusted Circle Members" itemName="Name (Relation)"/>
+              </div>
+              <div className="Remlist">
+                <List listName="Reminders" itemName="Reminder"/>
+              </div>
+              <div class="Messages">
+                <div class="MsgT">
+                  <h2>Messages</h2>
+                  <img src={TCtext} alt="Placeholder3"/>
+                </div>
+                <div class="MsgB">
+                  <form action="">
+                    <label for="newmsg">Send a message:</label><br/>
+                    <input class="txtbox" type="text" id="newTextMsg" name="newTextMsg"/>
+                    <input class="SndBtn" type="button" value="Send" onclick="alert('Message Sent')"/>
+                  </form>
+                </div>
               </div>
 
-              <div class="MsgB">
-                <form action="">
-                  <label for="newmsg">Send a message:</label>
-                  <br/>
-                  <input class="txtbox" type="text" id="newTextMsg" name="newTextMsg"/>
-                  <input class="SndBtn" type="button" value="Send" onclick="alert('Message Sent')"/>
-                </form>
-              </div>
             </div>
-
-          </div>
-
-        </body>
+        </div>
       </div>
+      </Router>
     );
   }
 }
