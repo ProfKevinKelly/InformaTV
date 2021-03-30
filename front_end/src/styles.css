@@ -24,7 +24,6 @@ body {
 
 .curator body {
   text-align: left;
-  /*background: linear-gradient(90deg, dimgrey 24%,  steelblue 25%)*/
 }
 
 /*Page Title*/
@@ -73,111 +72,8 @@ h1 {
   left: 300px;
 }
 
-/*Trusted Circle Member List
+/*Reminders and Messages*/
 
-.listHeader
-{
-    background-color: rgb(56, 56, 56);
-    padding: 30px 40px;
-    color: khaki;
-    text-align: center;
-}
-.listHeader:after
-{
-    content: "";
-    display: table;
-    clear: both;
-}
-.listHeader input
-{
-    margin: 0;
-    border: none;
-    border-radius: 0;
-    width: 70%;
-    padding: 10px;
-    float: left;
-    font-size: 18px;
-    color: rgb(56, 56, 56);
-}
-span.Add
-{
-    padding: 8px;
-    width: 20%;
-    background: green;
-    float: left;
-    text-align: center;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.3s;
-    border-radius: 0;
-}
-.Add:hover
-{
-    background-color: lightgreen;
-}
-.close
-{
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 12px 16px 12px 16px;
-}
-.close:hover
-{
-    background-color: #f44336;
-    color: white;
-}
-ul
-{
-    margin: 0;
-    padding: 0;
-}
-.cvTopRow ul li
-{
-    cursor: pointer;
-    list-style-type: none;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    background-color: steelblue;
-    color: khaki;
-    font-size: 18px;
-    transition: 0.2s;
-}
-.cvTopRow ul li:nth-child(odd)
-{
-    background-color: #43add0;
-}
-.cvTopRow ul li:hover
-{
-    background-color: #0033cc;
-}
-
-/*Reminders and Messages
-
-.Reminders ul li
-{
-    cursor: pointer;
-    list-style-type: none;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    background-color: rgb(77, 103, 185);
-    color: khaki;
-    font-size: 18px;
-    transition: 0.2s;
-}
-.Reminders ul li:nth-child(odd)
-{
-    background-color: rgb(40, 110, 150);
-}
-.Reminders ul li:hover
-{
-    background-color: rgb(22, 49, 97);
-}*/
-
-.TCircle .Remlist {
-  margin-left: 40%;
-  margin-right: 40%;
-}
 .curator .RemMsg {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
