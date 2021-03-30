@@ -19,19 +19,17 @@ class TrustedCircle extends Component {
 
   render() {
     return (
+      <div class="backg">
       <div class="TCircle">
         <body>
-
           <h1>Trusted Circle View</h1>
           {/* <!--Reminders & Messages--> */}
           <div class="RemMsg">
-
             <div class="Messages">
               <div class="MsgT">
                 <h2>Messages</h2>
                 <img src={TCtext} alt="Placeholder2"></img>{/*<!--Messages Window-->*/}
               </div>
-
               <div class="MsgB">
                 <form action="">{/* <!--sending a message doesn't do anything atm--> */}
                   <label for="newmsg">Send a message:</label>
@@ -42,14 +40,12 @@ class TrustedCircle extends Component {
               </div>
             </div>
             <br></br>
-            
             <div className="Remlist">
               <List listName="Reminders" itemName="Reminder"/>
             </div>
-
           </div>
-
         </body>
+      </div>
       </div>
     );
   }
