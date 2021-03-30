@@ -67,6 +67,7 @@ const Profile = () =>{
             <h2>Nickname: {user.nickname}</h2>
             <p>Email: {user.email}</p>
             {JSON.stringify(user, null, 2)}
+            <br></br>
             <button onClick={() => checkUserExists(user.sub)}>Check User Exists</button>
 
         </div>
