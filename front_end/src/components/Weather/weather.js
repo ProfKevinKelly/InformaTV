@@ -78,6 +78,11 @@ const Weather = () =>{
                                 {kelvinToCelcius(weatherApiData.main.temp)}&deg; C
                             </p>
 
+                            //will display the atmospheric pressure in pascals
+                            <p className="h2">
+                                <strong>{weatherApiData.main.pressure} Pa</strong>
+                            </p>
+
                             //should display the name of the city
                             <p className="h5">
                                 <i className="fas fa-map-marker-alt"></i>{' '}
