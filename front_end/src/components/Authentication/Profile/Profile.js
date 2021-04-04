@@ -1,5 +1,11 @@
 import React, { useEffect } from 'react';
 import {useAuth0} from '@auth0/auth0-react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const Profile = () =>{
     const {user, isAuthenticated, getAccessTokenSilently, } = useAuth0();
