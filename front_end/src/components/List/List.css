@@ -1,3 +1,5 @@
+/* List styling */
+
 .ListMain {
     background-color: rgb(56, 56, 56);
     padding: 10px;
@@ -9,15 +11,18 @@
 
 .ListMain input {
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 16px;
     border: 2px solid #FFF;
-    width: 77%;
+    width: 50%;
 }
 
 .ListMain button {
+    text-align: center;
     padding: 10px;
-    font-size: 16px;
+    font-size: 20px;
+    width: 10%;
+    margin-bottom: 10px;
     background-color: green;
     color: khaki;
     border: 2px solid green;

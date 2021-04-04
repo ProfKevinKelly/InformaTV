@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../../styles.css';
-import TCtext from '../images/TCtext.jpg';
-import List from "../List/List";
+import '../../styles.css'; // css
+import TCtext from '../images/TCtext.jpg'; // messaging placeholder 
+import List from "../List/List"; // list component
 
 class TrustedCircle extends Component {
   constructor() {
@@ -23,15 +23,15 @@ class TrustedCircle extends Component {
       <div class="TCircle">
         <body>
           <h1>Trusted Circle View</h1>
-          {/* <!--Reminders & Messages--> */}
+          {/* Reminders & Messages */}
           <div class="RemMsg">
             <div class="Messages">
               <div class="MsgT">
                 <h2>Messages</h2>
-                <img src={TCtext} alt="Placeholder2"></img>{/*<!--Messages Window-->*/}
+                <img src={TCtext} alt="Placeholder2"></img>{/* Messages Window */}
               </div>
               <div class="MsgB">
-                <form action="">{/* <!--sending a message doesn't do anything atm--> */}
+                <form action="">{/* TODO: implement text messaging */}
                   <label for="newmsg">Send a message:</label>
                   <br></br>
                   <input class="txtbox" type="text" id="newTextMsg" name="newTextMsg"></input>
@@ -41,7 +41,7 @@ class TrustedCircle extends Component {
             </div>
             <br></br>
             <div className="Remlist">
-              <List listName="Reminders" itemName="Reminder"/>
+              <List listName="Reminders" itemName="Reminder" perishable={true}/>
             </div>
           </div>
         </body>

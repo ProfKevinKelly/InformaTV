@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import '../../styles.css';
-import ControlPanel from '../images/ControlPanel.jpg';
-import ElderContent from '../images/ElderContent.jpg';
-import TCtext from '../images/TCtext.jpg';
-import List from "../List/List";
+import '../../styles.css'; // css
+import TCtext from '../images/TCtext.jpg'; // text messages image placeholder
+import List from "../List/List"; // list component
 import {
   BrowserRouter as Router,
   Switch,
@@ -28,28 +26,38 @@ class Curator extends Component {
   render() {
     return (
       <Router>
-      <div class="backg">
-        <div class="header">
+        <div class="backg">
+          {/* Page header */}
+          <div class="header">
             <h1>Curator View</h1>
-        </div>
-        <div class="media">
+          </div>
+           {/* Media */}
+          <div class="media">
             <div class = "weatherApi" bg="#00000000">
-                {/* <!weather api--> */}
-                <img src="https://i.pinimg.com/originals/71/a4/17/71a417ad67f61d12019794659776448d.jpg" alt="Essential Info" width="240px" height="200px"/>
+              {/* Weather */}
+              <img src="https://i.pinimg.com/originals/71/a4/17/71a417ad67f61d12019794659776448d.jpg" alt="Essential Info" width="240px" height="200px"/>
             </div>
             <div class="video">
-                <iframe width="750" height="400" src="https://www.rte.ie/bosco/components/player/iframe.html?clipid=7&thumbnail=00151820">
-                </iframe>
+              {/* News */}
+              <iframe width="750" height="400" src="https://www.rte.ie/bosco/components/player/iframe.html?clipid=7&thumbnail=00151820">
+              </iframe>
             </div>
-        </div>
-        <div class="sideButtons">
+          </div>
+          <div class="sideButtons">
+
             <div class="RemMsg">
+              
+              {/* Trusted Circle List */}
               <div className="TClist">
-                <List listName="Trusted Circle Members" itemName="Name (Relation)"/>
+                <List listName="Trusted Circle Members" itemName="Name (Relation)" perishable={false}/>
               </div>
+
+              {/* Reminders List */}
               <div className="Remlist">
-                <List listName="Reminders" itemName="Reminder"/>
+                <List listName="Reminders" itemName="Reminder" perishable={true}/>
               </div>
+
+              {/* Messages */}
               <div class="Messages">
                 <div class="MsgT">
                   <h2>Messages</h2>
@@ -65,8 +73,9 @@ class Curator extends Component {
               </div>
 
             </div>
+
+          </div>
         </div>
-      </div>
       </Router>
     );
   }
