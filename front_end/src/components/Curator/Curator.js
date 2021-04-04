@@ -26,26 +26,26 @@ class Curator extends Component {
   render() {
     return (
       <Router>
-        <div class="backg">
+        <div className="backg">
           {/* Page header */}
-          <div class="header">
+          <div className="header">
             <h1>Curator View</h1>
           </div>
            {/* Media */}
-          <div class="media">
-            <div class = "weatherApi" bg="#00000000">
+          <div className="media">
+            <div className = "weatherApi" bg="#00000000">
               {/* Weather */}
               <img src="https://i.pinimg.com/originals/71/a4/17/71a417ad67f61d12019794659776448d.jpg" alt="Essential Info" width="240px" height="200px"/>
             </div>
-            <div class="video">
+            <div className="video">
               {/* News */}
               <iframe width="750" height="400" src="https://www.rte.ie/bosco/components/player/iframe.html?clipid=7&thumbnail=00151820">
               </iframe>
             </div>
           </div>
-          <div class="sideButtons">
+          <div className="sideButtons">
 
-            <div class="RemMsg">
+            <div className="RemMsg">
               
               {/* Trusted Circle List */}
               <div className="TClist">
@@ -58,16 +58,16 @@ class Curator extends Component {
               </div>
 
               {/* Messages */}
-              <div class="Messages">
-                <div class="MsgT">
+              <div className="Messages">
+                <div className="MsgT">
                   <h2>Messages</h2>
                   <img src={TCtext} alt="Placeholder3"/>
                 </div>
-                <div class="MsgB">
+                <div className="MsgB">
                   <form action="">
-                    <label for="newmsg">Send a message:</label><br/>
-                    <input class="txtbox" type="text" id="newTextMsg" name="newTextMsg"/>
-                    <input class="SndBtn" type="button" value="Send" onclick="alert('Message Sent')"/>
+                    <label htmlFor="newmsg">Send a message:</label><br/>
+                    <input className="txtbox" type="text" id="newTextMsg" name="newTextMsg"/>
+                    <input className="SndBtn" type="button" value="Send" onClick="alert('Message Sent')"/>
                   </form>
                 </div>
               </div>

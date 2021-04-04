@@ -12,21 +12,35 @@ class List extends Component {
             perishable: this.props.perishable, // true if item has expiry sate
             items: [], // start with empty array of the list items
         };
-        this.addItem = this.addItem.bind(this); // addItem belongs to List
-        this.deleteItem = this.deleteItem.bind(this); // deleteItem belongs to List
+        this.addItem = this.addItem.bind(this); // `this` in addItem points to this List
+        this.deleteItem = this.deleteItem.bind(this); // `this` in deleteItem points to this List
+        this.dispDate = this.dispDate.bind(this); // `this` in dispDate points to this List
     }
 
     // add item event handler
-    addItem(item) {
+    addItem(e) {
+
+        e.preventDefault(); // block reloading the page
+
         if (this._inputElement.value !== "") {
 
             // make the new item
-            const newItem = {
-                text: this._inputElement.value, // item name
-                key: Date.now(), // use item creation date and time as a unique key
-                date: this.date.value, // item expiry date, may be ignored if unnecessary
-                perishable: this.state.perishable // whether or not item expiry date is ignored
-            };
+            let newItem = null;
+            if (this.state.perishable) { // if perishable, there is a date
+                newItem = {
+                    text: this._inputElement.value, // item name
+                    key: Date.now(), // use item creation date and time as a unique key
+                    date: this.date.value, // item expiry date
+                    perishable: this.state.perishable // whether or not item expiry date is ignored
+                };
+            }
+            else { // if non-perishable, date is null, so don't access it
+                newItem = {
+                    text: this._inputElement.value, // item name
+                    key: Date.now(), // use item creation date and time as a unique key
+                    perishable: this.state.perishable // whether or not item expiry date is ignored
+                };
+            }
             
             // new state is the old state plus the new item, state is not modified, but replaced
             this.setState((prevState) => {
@@ -43,8 +57,6 @@ class List extends Component {
         }
 
         console.log(this.state.items); // log new state/items
-
-        item.preventDefault(); // block unwanted default behaviour (such as reloading the page)
     }
 
     // delete item event handler
@@ -59,6 +71,15 @@ class List extends Component {
         });
     }
 
+    dispDate() {
+
+        if (this.state.perishable) {
+            
+            return <div><input type="datetime-local" ref={(a) => this.date = a}></input></div>
+        }
+        return null;
+    }
+
     render() {
         return(
             <div className="ListMain">
@@ -68,12 +89,12 @@ class List extends Component {
                 <form onSubmit={this.addItem}> {/* add list item on submit */}
                     {/* text input box */}
                     <input
-                        ref={(n) => this._inputElement = n}
+                        ref={(a) => this._inputElement = a}
                         placeholder={this.state.itemName}> 
                     </input>
                     <br/>
                     {/* expiry date input box */}
-                    <input type="datetime-local" ref={(d) => this.date = d}></input>
+                    <this.dispDate></this.dispDate>
                     <br/>
                     {/* add button */}
                     <button type="submit">Add</button>

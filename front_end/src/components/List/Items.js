@@ -6,7 +6,7 @@ class Items extends Component {
     constructor(props) {
         super(props);
 
-        this.createItems = this.createItems.bind(this); // createItems belongs to Items
+        this.createItems = this.createItems.bind(this); // `this` in createItems points to this Items
     }
 
     delete(key) {
