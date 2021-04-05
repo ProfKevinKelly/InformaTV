@@ -32,10 +32,10 @@ class ElderlyPortal extends Component {
         <div class="media">
             <div class = "weatherApi" bg="#00000000">
                 {/* <!weather api--> */}
-                <img src="https://i.pinimg.com/originals/71/a4/17/71a417ad67f61d12019794659776448d.jpg" alt="Essential Info" width="240px" height="200px"/>
+                <img src="https://i.pinimg.com/originals/71/a4/17/71a417ad67f61d12019794659776448d.jpg" alt="Essential Info" width="240px" height="300px"/>
             </div>
             <div class="video">
-                <iframe width="750" height="400" src="https://www.rte.ie/bosco/components/player/iframe.html?clipid=7&thumbnail=00151820">
+                <iframe width="100%" height="100%" src="https://www.rte.ie/bosco/components/player/iframe.html?clipid=7&thumbnail=00151820">
                 </iframe>
             </div>
         </div>

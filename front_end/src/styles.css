@@ -151,7 +151,7 @@ p {
   position: relative;
   flex: 0 0 19.7%;
   left: 10px;
-  top: -190px;
+  margin-top: 1%;
   height: 100px;
   width: 180px;
   margin-bottom: 10px;
