@@ -17,6 +17,7 @@ import './components/Authentication/Login/LoginButton.css'
 import './components/Authentication/Logout/LogoutButton.css'
 import Curator from './components/Curator/Curator';
 import TrustedCircle from './components/TrustedCircle/TrustedCircle';
+import Chat from './components/Chat/Chat';
 
 
 class App extends Component {
@@ -38,6 +39,7 @@ class App extends Component {
             <Link to="/ElderlyPortal" style={{padding:20}}>Elderly Portal</Link>
             <Link to="/Curator" style={{padding:20}}>Curator</Link>
             <Link to="/TrustedCircle" style={{padding:20}}>Trusted Circle</Link>
+            <Link to="/Chat" style={{padding:20}}>Chat</Link>
           </div>
         </header>
         <Switch>
@@ -52,6 +54,9 @@ class App extends Component {
           </Route>
           <Route path="/TrustedCircle">
             <TrustedCircle />
+          </Route>
+          <Route path="/Chat">
+            <Chat />
           </Route>
         </Switch>
       </div>
