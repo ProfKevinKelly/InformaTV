@@ -58,14 +58,14 @@ h1 {
   display: inline-block;
 }
 
-/*Curator Content View*/
+/*Curator Content View
 
 .cvContent {
   position: relative;
   left: 200px;
 }
 
-/*Control Panel*/
+/*Control Panel
 
 .cvPanel {
   position: relative;
@@ -121,7 +121,7 @@ input.SndBtn:hover {
   background-color: darkgrey;
 }
 
-/*elderly person view main page css*/
+/* elderly person view and curator view main page */
 .header {
   color: white;
   text-align: left;
@@ -176,12 +176,14 @@ p {
 }
 
 .weatherApi {
-  margin-left: 10px;
+  margin-left: 1%;
 }
 
 .video {
   position: relative;
-  left: 200px;
+  margin-left: 2%;
+  margin-right: 5%;
+  flex: auto;
 }
 
 .bottomButtons {
