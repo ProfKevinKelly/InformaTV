@@ -1,19 +1,9 @@
 import React, { useEffect } from 'react';
 import {useAuth0} from '@auth0/auth0-react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import ElderlyPortal from '../../../components/ElderlyPortal/ElderlyPortal';
-import Curator from '../../../components/Curator/Curator';
-import TrustedCircle from '../../../components/TrustedCircle/TrustedCircle';
 
 const Profile = () =>{
     const {user, isAuthenticated, getAccessTokenSilently, } = useAuth0();
     var accessToken = "";
-    var userType = 1;
 
     useEffect(() => {
         const getUserTokendata = async () => {
@@ -47,22 +37,22 @@ const Profile = () =>{
         if(userType.length!=0){
           console.log("HERE", userType[0]);
           if(userType[0].userType==1){ // If it is an elderly user
-            userType = 1;
             console.log("I am an elderly user");
+            window.open("/ElderlyPerson");
             fetch('http://localhost:5000/api/getElderlyPortal/?id='+id)
             .then(res => res.json())
             .then(result => console.log('Result = ', result.response));  //Route to elderly screen
           }
           else if (userType[0].userType==2){// If it is a Curator
             console.log("I am a curator");
-            userType = 2;
+            window.open("/Curator");
           }
           else if (userType[0].userType==3){// If it is a Close circle member
             console.log("I am a close circle member");
             fetch('http://localhost:5000/api/getCloseCircle/?id='+id)
             .then(res => res.json())
             .then(result => console.log('Result = ', result.response));  //Route to close circle screen
-            userType = 3;
+            window.open("/TrustedCircle");
           }
         }
         else{
@@ -83,26 +73,6 @@ const Profile = () =>{
             {JSON.stringify(user, null, 2)}
             <br></br>
             <button onClick={() => checkUserExists(user.sub)}>Check User Exists</button>
-            {userType==1 &&
-              <Link to="/ElderlyPortal" style={{padding:20}}>Elderly Portal</Link>
-            }
-            {userType==2 &&
-              <Link to="/Curator" style={{padding:20}}>Curator</Link>
-            }
-            {userType==3 &&
-              <Link to="/TrustedCircle" style={{padding:20}}>Trusted Circle</Link>
-            }
-            <Switch>
-              <Route path="/ElderlyPortal">
-                <ElderlyPortal />
-              </Route>
-              <Route path="/Curator">
-                <Curator />
-              </Route>
-              <Route path="/TrustedCircle">
-                <TrustedCircle />
-              </Route>
-            </Switch>
         </div>
         )
     )

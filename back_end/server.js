@@ -5,11 +5,7 @@ const app = express();
 app.use(cors())
 
 var APIRouter = require('./routes/API');
-app.get('/', cors(), (req, res) => {
-  const userType = 0;
-  getUserMetadata();
-  res.json(userType);
-});
+
 app.use('/API', APIRouter);
 
 app.get('/customers', cors(), (req, res) => {
