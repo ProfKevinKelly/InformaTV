@@ -69,11 +69,6 @@ h1 {
   margin-bottom: 10px;
 }
 
-input.txtbox,
-select.rmndrList {
-  background-color: rgb(69, 69, 69);
-}
-
 input.SndBtn {
   background-color: rgb(69, 69, 69);
   cursor: pointer;
@@ -82,16 +77,14 @@ input.SndBtn:hover {
   background-color: grey;
 }
 
-/* elderly person view and curator view main page */
-
-.header {
-  color: white;
-  text-align: left;
-  font-size: 15px;
-  margin-left: 45px;
+input.txtbox,
+select.rmndrList {
+  background-color: rgb(69, 69, 69);
 }
 
-p {
+/* elderly person view and curator view main page */
+
+.elderview p {
   color: white;
   font-size: 20px;
 }

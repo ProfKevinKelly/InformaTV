@@ -20,28 +20,34 @@ class TrustedCircle extends Component {
   render() {
     return (
       <body className="TCview">
+
         <h1>Trusted Circle View</h1>
-        {/* Reminders & Messages */}
-        <div className="RemMsg">
-          <div className="Messages">
-            <div className="MsgT">
-              <h2>Messages</h2>
-              <img src={TCtext} alt="Placeholder2"></img>{/* Messages Window */}
-            </div>
-            <div className="MsgB">
-              <form action="">{/* TODO: implement text messaging */}
-                <label htmlFor="newmsg">Send a message:</label>
-                <br></br>
-                <input className="txtbox" type="text" id="newTextMsg" name="newTextMsg"></input>
-                <input className="SndBtn" type="button" value="Send" onclick="alert('Message Sent')"></input>
-              </form>
-            </div>
+
+        {/* Messages */}
+        <div className="Messages">
+
+          <div className="MsgT">
+            <h2>Messages</h2>
+            <img src={TCtext} alt="Placeholder"></img>{/* Messages Window */}
           </div>
-          <br></br>
-          <div className="Remlist">
-            <List listName="Reminders" itemName="Reminder" perishable={true}/>
+
+          <div className="MsgB">
+            <form action="">{/* TODO: implement text messaging */}
+              <label htmlFor="newmsg">Send a message:</label>
+              <br></br>
+              <input className="txtbox" type="text" id="newTextMsg" name="newTextMsg"></input>
+              <input className="SndBtn" type="button" value="Send" onclick="alert('Message Sent')"></input>
+            </form>
           </div>
+
         </div>
+        <br/>
+        
+        {/* Reminders */}
+        <div className="Remlist">
+          <List listName="Reminders" itemName="Reminder" perishable={true}/>
+        </div>
+
       </body>
     );
   }

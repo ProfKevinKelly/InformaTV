@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import '../../styles.css';
+import '../../styles.css'; // css
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import Reminders from '../Reminders/Reminders';
-import Weather from '../Weather/weather';
+import Reminders from '../Reminders/Reminders'; // Reminders.js
+import Weather from '../Weather/weather'; // weather.js
 
 class ElderlyPortal extends Component {
   constructor() {
@@ -27,14 +27,18 @@ class ElderlyPortal extends Component {
     return (
       <Router>
         <body className="elderview">
-          <div className="header">
-            <h1>InformaTV</h1>
-          </div>
+
+          <h1>InformaTV</h1>
+
+          {/* Main video content */}
           <div className="video">
             <iframe width="100%" height="300px" src="https://www.rte.ie/bosco/components/player/iframe.html?clipid=7&thumbnail=00151820">
             </iframe>
           </div>
+
+          {/* Sidebar buttons */}
           <div className="sideButtons">
+
             <div class = "sideBtn"><br/>
               <Link to="/Weather" style={{padding:20}}>Weather</Link>
             </div>
@@ -44,8 +48,12 @@ class ElderlyPortal extends Component {
             <div className="sideBtn"><br/>
               <p>Message</p>
             </div>
+
           </div>
+
+          {/* Bottom content selection buttons */}
           <div class ="bottomButtons">
+
             <div className="bottomBtn">
               <img src="https://img.freepik.com/free-vector/sports-news-with-abstract-background-sports-elements_1419-1926.jpg?size=626&ext=jpg" width="100%" height="100%"/>
             </div>
@@ -58,15 +66,18 @@ class ElderlyPortal extends Component {
             <div className="bottomBtn">
               <img src="https://youthincmag.com/wp-content/uploads/2016/03/Gladiator-2000.jpg" width="100%" height="100%"/>
             </div>
+
           </div>
+
           <Switch>
-            <Route path="/Reminders">
+            <Route path="/Reminders">{/* link to reminders */}
               <Reminders />
             </Route>
-            <Route path="/Weather">
+            <Route path="/Weather">{/* link to weather */}
               <Weather />
             </Route>
           </Switch>
+
         </body>
       </Router>
     );

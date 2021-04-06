@@ -28,41 +28,38 @@ class Curator extends Component {
       <Router>
         <body className="curatorview">
           
-          {/* Page header */}
-          <div className="header">
-            <h1>Curator View</h1>
-          </div>
+          <h1>Curator View</h1>
+
           {/* Elder's video content */}
           <div className="video">
             <iframe width="100%" height="420px" src="https://www.rte.ie/bosco/components/player/iframe.html?clipid=7&thumbnail=00151820">
             </iframe>
           </div>
-
-          <div className="RemMsg">
             
-            {/* Trusted Circle List */}
-            <div className="TClist">
-              <List listName="Trusted Circle Members" itemName="Name (Relation)" perishable={false}/>
+          {/* Trusted Circle List */}
+          <div className="TClist">
+            <List listName="Trusted Circle Members" itemName="Name (Relation)" perishable={false}/>
+          </div>
+
+          {/* Reminders List */}
+          <div className="Remlist">
+            <List listName="Reminders" itemName="Reminder" perishable={true}/>
+          </div>
+
+          {/* Messages */}
+          <div className="Messages">
+
+            <div className="MsgT">
+              <h2>Messages</h2>
+              <img src={TCtext} alt="Placeholder"/>
             </div>
 
-            {/* Reminders List */}
-            <div className="Remlist">
-              <List listName="Reminders" itemName="Reminder" perishable={true}/>
-            </div>
-
-            {/* Messages */}
-            <div className="Messages">
-              <div className="MsgT">
-                <h2>Messages</h2>
-                <img src={TCtext} alt="Placeholder3"/>
-              </div>
-              <div className="MsgB">
-                <form action="">
-                  <label htmlFor="newmsg">Send a message:</label><br/>
-                  <input className="txtbox" type="text" id="newTextMsg" name="newTextMsg"/>
-                  <input className="SndBtn" type="button" value="Send" onClick="alert('Message Sent')"/>
-                </form>
-              </div>
+            <div className="MsgB">
+              <form action="">
+                <label htmlFor="newmsg">Send a message:</label><br/>
+                <input className="txtbox" type="text" id="newTextMsg" name="newTextMsg"/>
+                <input className="SndBtn" type="button" value="Send" onClick="alert('Message Sent')"/>
+              </form>
             </div>
 
           </div>
