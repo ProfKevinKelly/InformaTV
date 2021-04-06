@@ -4,7 +4,7 @@
   "description": "Starter kit for creating React and Express apps",
   "main": "server.js",
   "scripts": {
-    "client-install": "cd front_end && npm install",
+    "client-install": "cd .. && cd front_end && npm install",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "cd ../front_end && npm start",

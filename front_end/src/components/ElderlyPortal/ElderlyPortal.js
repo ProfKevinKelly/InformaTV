@@ -7,6 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import Reminders from '../Reminders/Reminders';
+import Weather from '../Weather/Weather';
 
 class ElderlyPortal extends Component {
   constructor() {
@@ -30,16 +31,15 @@ class ElderlyPortal extends Component {
             <h1>InformaTV</h1>
         </div>
         <div class="media">
-            <div class = "weatherApi" bg="#00000000">
-                {/* <!weather api--> */}
-                <img src="https://i.pinimg.com/originals/71/a4/17/71a417ad67f61d12019794659776448d.jpg" alt="Essential Info" width="240px" height="300px"/>
-            </div>
             <div class="video">
                 <iframe width="100%" height="100%" src="https://www.rte.ie/bosco/components/player/iframe.html?clipid=7&thumbnail=00151820">
                 </iframe>
             </div>
         </div>
         <div class="sideButtons">
+            <div class = "sideBtn"><br/>
+              <Link to="/Weather" style={{padding:20}}>Weather</Link>
+            </div>
             <div class="sideBtn"><br/>
             <Link to="/Reminders" style={{padding:20}}>Reminders</Link>
             </div>
@@ -56,6 +56,9 @@ class ElderlyPortal extends Component {
         <Switch>
           <Route path="/Reminders">
             <Reminders />
+          </Route>
+          <Route path="/Weather">
+            <Weather />
           </Route>
         </Switch>
       </div>
