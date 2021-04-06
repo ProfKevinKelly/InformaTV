@@ -33,10 +33,6 @@ class Curator extends Component {
           </div>
            {/* Media */}
           <div className="media">
-            <div className = "weatherApi" bg="#00000000">
-              {/* Weather */}
-              <img src="https://i.pinimg.com/originals/71/a4/17/71a417ad67f61d12019794659776448d.jpg" alt="Essential Info" width="240px" height="300px"/>
-            </div>
             <div className="video">
               {/* Video content */}
               <iframe width="100%" height="100%" src="https://www.rte.ie/bosco/components/player/iframe.html?clipid=7&thumbnail=00151820">

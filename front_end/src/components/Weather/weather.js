@@ -46,14 +46,14 @@ class Weather extends Component{
     render(){
         return(
             <div>
-                {this.state.icon && <img src={`https://openweathermap.org/img/w/${this.state.icon}.png`} alt = "weather icon" width = "25%" 
-                height = "25%"/>}
-                {this.state.country && this.state.city && <p>Location:
-                {this.state.country}, {this.state.city}</p>}
-                {this.state.temperature && <p> Temperature:
-                {this.state.temperature}</p>}
-                {this.state.pressure && <p> Pressure:
-                {this.state.pressure}</p>}
+                {this.state.icon && <img src={`https://openweathermap.org/img/w/${this.state.icon}.png`} alt = "weather icon" width = "10%" 
+                height = "10%"/>}
+                {this.state.country && this.state.city && <p>Location:&nbsp; 
+                {this.state.city}</p>}
+                {this.state.temperature && <p> Temperature:&nbsp;
+                {this.state.temperature}&deg;C</p>}
+                {this.state.pressure && <p> Pressure:&nbsp;
+                {this.state.pressure}PA</p>}
                 {this.state.error &&<p>{this.state.error}</p>}
                 
             </div>

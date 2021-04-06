@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  background-color: steelblue;
+  background-color: rgb(113, 170, 216);
   padding: 0px;
   margin: 0px;
 }
@@ -30,7 +30,7 @@ body {
 
 h1 {
   text-align: center;
-  color: khaki;
+  color: rgb(255, 255, 255);
   font-size: 60px;
   margin: 0;
   padding: 0px;
@@ -40,11 +40,11 @@ h1 {
 /*index*/
 
 .index button {
-  color: khaki;
+  color: rgb(255, 255, 255);
   font-size: 16px;
   line-height: 2;
   letter-spacing: 1px;
-  background-color: dimgrey;
+  background-color: grey;
   cursor: pointer;
 }
 
@@ -93,14 +93,14 @@ h1 {
 }
 
 .Messages h2 {
-  color: khaki;
+  color: rgb(255, 255, 255);
   text-decoration: solid;
   padding-bottom: 4px;
   margin: 0;
 }
 .Messages label,
 .Messages input {
-  color: khaki;
+  color: rgb(255, 255, 255);
   font-size: 16px;
   line-height: 2;
   letter-spacing: 1px;
@@ -110,11 +110,11 @@ h1 {
 
 input.txtbox,
 select.rmndrList {
-  background-color: dimgrey;
+  background-color: grey;
 }
 
 input.SndBtn {
-  background-color: dimgrey;
+  background-color: grey;
   cursor: pointer;
 }
 input.SndBtn:hover {
@@ -137,7 +137,7 @@ p {
 .backg {
   height: 100%;
   width: 100%;
-  background: linear-gradient(90deg, #214c84 22%, #221f1f 20%);
+  background: linear-gradient(90deg, rgb(113, 170, 216) 22%, #221f1f 20%);
 }
 
 .sideButtons {
@@ -146,7 +146,7 @@ p {
 }
 
 .sideBtn {
-  background: #545454;
+  background: #8f8f8f;
   color: white;
   position: relative;
   flex: 0 0 19.7%;
@@ -195,7 +195,7 @@ p {
   background: green;
   position: relative;
   flex: 0 0 15%;
-  left: 350px;
+  left: 30%;
   top: -200px;
   height: 100px;
   margin: 5px;

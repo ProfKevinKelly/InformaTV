@@ -15,7 +15,7 @@ li {
   display: grid;
   width: 10%;
   border: none;
-  background-color: blue;
+  background-color: rgb(1, 120, 255);
   padding: 5px;
   font-size: 22px;
   cursor: pointer;
