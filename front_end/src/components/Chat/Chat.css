@@ -33,6 +33,22 @@ li {
   table-layout: fixed; /*Optional*/
   border-spacing: 10px; /*Optional*/
 }
+.channel-row {
+  display: table;
+  cursor: pointer;
+  height: 10vh;
+  border-bottom: 1px solid darkblue;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%; /*Optional*/
+  table-layout: fixed; /*Optional*/
+  border-spacing: 10px; /*Optional*/
+}
+.channel-name{
+  color: darkblue;
+  font-size: 20px;
+  float: left;
+}
 .Column {
   display: table-cell;
   border: 0.5px solid black;

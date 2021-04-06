@@ -4,11 +4,15 @@ import './Chat.css'; // css
 import ChatWindow from './ChatInput/ChatWindow';
 import ChatInput from './ChatInput/ChatInput';
 
+
 const Chat = () => {
     const [ connection, setConnection ] = useState(null);
     const [ chat, setChat ] = useState([]);
     const latestChat = useRef(null);
-
+    // state = {
+    //     activeChat: null,
+    //   };
+    
     latestChat.current = chat;
 
     useEffect(() => {
@@ -64,10 +68,23 @@ const Chat = () => {
         <div class="chat-container">
             <div class="Row">
                 <div class="Column">
-                    <div>Channels</div>
+                    <div class="channels-list">
+                        <div class="channel-row">
+                            <div class="channel-name" >John Doe</div>
+                        </div>
+                        <div class="channel-row">
+                            <div class="channel-name">Jane Doe</div>
+                        </div>
+                        <div class="channel-row">
+                            <div class="channel-name">Jack Doe</div>
+                        </div>
+                        <div class="channel-row">
+                            <div class="channel-name">James Doe</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="chat-window">
-                    <ChatWindow chat={chat}/>
+                    <ChatWindow chat={chat} />
                 </div>
                 <div class="chat-input">
                     <ChatInput sendMessage={sendMessage} />
