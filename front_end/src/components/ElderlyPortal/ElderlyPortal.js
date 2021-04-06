@@ -7,7 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import Reminders from '../Reminders/Reminders';
-import Weather from '../Weather/Weather';
+import Weather from '../Weather/weather';
 
 class ElderlyPortal extends Component {
   constructor() {
