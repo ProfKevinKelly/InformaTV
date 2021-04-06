@@ -10,3 +10,40 @@ li {
   line-height: 2rem;
   border-bottom: 1px dotted #777;
 }
+.chat-container{
+  width: 100%;
+  height: 80vh;
+}
+.chat-window{
+  width: 100%;
+  height:70%;
+  border: 0.5px solid black;
+  margin-bottom:5%;
+  overflow-y: scroll;
+}
+.chat-input{
+  width: 100%;
+  height:25%;
+  border: 0.5px solid black;
+}
+.Row {
+  display: table;
+  height: 100%;
+  width: 100%; /*Optional*/
+  table-layout: fixed; /*Optional*/
+  border-spacing: 10px; /*Optional*/
+}
+.Column {
+  display: table-cell;
+  border: 0.5px solid black;
+}
+.chat-username{
+  color: darkblue;
+  font-size: 20px;
+  float: left;
+}
+.chat-message{
+  font-size: 18px;
+  color: black;
+  float: left;
+}

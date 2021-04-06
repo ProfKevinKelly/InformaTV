@@ -1,17 +1,35 @@
 import React, { useState } from 'react';
+import './ChatInput.css'; // css
+import {useAuth0} from '@auth0/auth0-react';
 
 const ChatInput = (props) => {
-    const [user, setUser] = useState('');
+    // const [user, setUser] = useState('');
     const [message, setMessage] = useState('');
+    const {user, isAuthenticated, getAccessTokenSilently} = useAuth0();
+
+    // const getUserTokendata = async () => {
+    //     const domain = "dev-l7o00ivv.eu.auth0.com";
+    
+    //     try {
+    //       accessToken = await getAccessTokenSilently({
+    //         audience: `https://${domain}/api/v2/`,
+    //         scope: "read:current_user",
+    //       });
+    //       localStorage.setItem('accessToken', accessToken)
+    //     } catch (e) {
+    //       console.log(e.message);
+    //     }
+    //   };
+    // }
 
     const onSubmit = (e) => {
         e.preventDefault();
 
-        const isUserProvided = user && user !== '';
+        const isEmailProvided = user.email && user.email !== '';
         const isMessageProvided = message && message !== '';
 
-        if (isUserProvided && isMessageProvided) {
-            props.sendMessage(user, message);
+        if (isEmailProvided && isMessageProvided) {
+            props.sendMessage(user.email, message);
         } 
         else {
             alert('Please insert an user and a message.');
@@ -25,28 +43,20 @@ const ChatInput = (props) => {
     const onMessageUpdate = (e) => {
         setMessage(e.target.value);
     }
-
+    // getUserTokendata();
     return (
-        <form 
+        isAuthenticated &&
+        <form class="form-container"
             onSubmit={onSubmit}>
-            <label htmlFor="user">User:</label>
-            <br />
-            <input 
-                id="user" 
-                name="user" 
-                value={user}
-                onChange={onUserUpdate} />
-            <br/>
-            <label htmlFor="message">Message:</label>
-            <br />
-            <input 
+            <div class="logged-in-user">{user.email}</div>
+            <input class="input-window"
                 type="text"
                 id="message"
                 name="message" 
                 value={message}
                 onChange={onMessageUpdate} />
             <br/><br/>
-            <button>Submit</button>
+            <button class="send-message-button">Send</button>
         </form>
     )
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { HubConnectionBuilder } from '@microsoft/signalr';
-
+import './Chat.css'; // css
 import ChatWindow from './ChatInput/ChatWindow';
 import ChatInput from './ChatInput/ChatInput';
 
@@ -13,7 +13,7 @@ const Chat = () => {
 
     useEffect(() => {
         const newConnection = new HubConnectionBuilder()
-            .withUrl('https://localhost:44320/')
+            .withUrl('https://localhost:44320/hubs/chathub')
             .withAutomaticReconnect()
             .build();
 
@@ -25,10 +25,14 @@ const Chat = () => {
             connection.start()
                 .then(result => {
                     console.log('Connected!');
-    
-                    connection.on('ReceiveMessage', message => {
+                    connection.on('ReceiveMessage', (message, user) => {
                         const updatedChat = [...latestChat.current];
-                        updatedChat.push(message);
+                        let message2 = {
+                          message: message,
+                          user: user
+                        }
+                        console.log("received");
+                        updatedChat.push(message2);
                     
                         setChat(updatedChat);
                     });
@@ -42,10 +46,10 @@ const Chat = () => {
             user: user,
             message: message
         };
-
         if (connection.connectionStarted) {
             try {
-                await connection.send('SendMessage', chatMessage);
+                console.log("Sending", message);
+                await connection.invoke('SendMessage', message, user);
             }
             catch(e) {
                 console.log(e);
@@ -57,10 +61,18 @@ const Chat = () => {
     }
 
     return (
-        <div>
-            <ChatInput sendMessage={sendMessage} />
-            <hr />
-            <ChatWindow chat={chat}/>
+        <div class="chat-container">
+            <div class="Row">
+                <div class="Column">
+                    <div>Channels</div>
+                </div>
+                <div class="chat-window">
+                    <ChatWindow chat={chat}/>
+                </div>
+                <div class="chat-input">
+                    <ChatInput sendMessage={sendMessage} />
+                </div>
+            </div>
         </div>
     );
 };
