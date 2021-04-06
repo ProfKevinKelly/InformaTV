@@ -38,7 +38,7 @@ const Profile = () =>{
           console.log("HERE", userType[0]);
           if(userType[0].userType==1){ // If it is an elderly user
             console.log("I am an elderly user");
-            window.open("/ElderlyPerson");
+            window.open("/ElderlyPortal");
             fetch('http://localhost:5000/api/getElderlyPortal/?id='+id)
             .then(res => res.json())
             .then(result => console.log('Result = ', result.response));  //Route to elderly screen
