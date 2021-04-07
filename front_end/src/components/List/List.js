@@ -10,7 +10,7 @@ class List extends Component {
             listName: this.props.listName, // list name prop e.g. "Reminders"
             itemName: this.props.itemName, // item name prop e.g. "reminder"
             perishable: this.props.perishable, // true if item has expiry sate
-            items: [], // start with empty array of the list items
+            items: [], // array of list items
         };
         this.addItem = this.addItem.bind(this); // `this` in addItem points to this List
         this.deleteItem = this.deleteItem.bind(this); // `this` in deleteItem points to this List
@@ -24,31 +24,52 @@ class List extends Component {
 
         if (this._inputElement.value !== "") {
 
-            // make the new item
+            // make the new item and add it
             let newItem = null;
-            if (this.state.perishable) { // if perishable, there is a date
+            if (this.state.perishable) {
+                // if perishable, there is a date
                 newItem = {
                     text: this._inputElement.value, // item name
-                    key: Date.now(), // use item creation date and time as a unique key
+                    key: Date.now(), // make unique key
                     date: this.date.value, // item expiry date
                     perishable: this.state.perishable // whether or not item expiry date is ignored
                 };
+                // get today's date and time in the correct string format
+                let today = new Date();
+                let currentDate = today.getFullYear() + "-"
+                    + ((today.getMonth() < 10)?"0":"") + (today.getMonth()+1) + "-"
+                    + ((today.getDate() < 10)?"0":"") + today.getDate() + "T"
+                    + ((today.getHours() < 10)?"0":"") + today.getHours() + ":"
+                    + ((today.getMinutes() < 10)?"0":"") + today.getMinutes();
+                // prevent past reminders
+                if (newItem.date <= currentDate) {
+                    alert("Please enter a valid date and time");
+                }
+                else {
+                    // add and sort by date
+                    this.setState((prevState) => {
+                        let x = prevState.items.concat(newItem);
+                        return {
+                            items: x.sort((a, b) => (a.date > b.date) ? 1 : -1)
+                        };
+                    });
+                }
             }
-            else { // if non-perishable, date is null, so don't access it
+            else {
+                // if non-perishable, date is null, so don't access it
                 newItem = {
                     text: this._inputElement.value, // item name
-                    key: Date.now(), // use item creation date and time as a unique key
+                    key: Date.now(), // make unique key
                     perishable: this.state.perishable // whether or not item expiry date is ignored
                 };
+                // add unsorted
+                this.setState((prevState) => {
+                    return {
+                        items: prevState.items.concat(newItem)
+                    };
+                });
             }
             
-            // new state is the old state plus the new item, state is not modified, but replaced
-            this.setState((prevState) => {
-                return {
-                    items: prevState.items.concat(newItem)
-                };
-            });
-
             // empty the input text box
             this._inputElement.value = "";
         }
@@ -56,7 +77,7 @@ class List extends Component {
             alert("Please type in the input box");
         }
 
-        console.log(this.state.items); // log new state/items
+        console.log(this.state.items);
     }
 
     // delete item event handler
