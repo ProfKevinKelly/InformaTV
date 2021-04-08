@@ -1,1 +1,0 @@
-# This folder will be deleted as we progressively merge it into the main app

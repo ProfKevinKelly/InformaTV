@@ -1,5 +1,4 @@
-.idea/workspace.xml
-.idea/vcs.xml
+.idea
 
 # Ignore Mac system files
 .DS_store

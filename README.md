@@ -1,15 +1,21 @@
 # Information Portal For Elderly In The Home (InformaTV)
+
 This is the Software Engineering Project for Group 29
 
-# Installation
-You will need Node.js installed, if you don't have it installed you can install it here:
-[install node](https://nodejs.org/en/download/current/)
+## Installation
 
-# Execution
-To run the react app type:
-```make execute```
+You will need Node.js installed, if you don't have it installed you can install it [here](https://nodejs.org/en/download/current/)
 
-# Errors
-There are some issues with running *make execute* on windows but we are working on fixing it.
-If it doesn't work then navigate to *back_end* and type:
-```npm run dev```
+## Execution
+
+To run the React app use: `make execute`
+
+## Errors
+
+`make execute` might not work on Windows unless you use the Git bash shell.
+
+If the makefile doesn't work then:
+
+- navigate to *front_end* and use: `npm i`
+- navigate to *back_end* and use: `npm i`
+- use: `npm run dev`

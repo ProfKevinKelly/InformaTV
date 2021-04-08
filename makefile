@@ -4,8 +4,8 @@ git:
 	git push
 execute:
 	cd front_end;\
-	npm install;
+	npm i;
 	cd back_end;\
-	npm install;\
+	npm i;\
 	npm run dev;
 	
