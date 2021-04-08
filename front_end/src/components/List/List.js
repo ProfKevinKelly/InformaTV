@@ -11,7 +11,7 @@ class List extends Component {
             uniqueName: this.props.uniqueName, // List object's unique string identifier for cookies
             listName: this.props.listName, // list name prop e.g. "Reminders"
             itemName: this.props.itemName, // item name prop e.g. "reminder"
-            perishable: this.props.perishable, // true if item has expiry sate
+            perishable: this.props.perishable, // true if items have expiry date
             items: [], // array of list items
         };
         this.addItem = this.addItem.bind(this); // `this` in addItem points to this List
@@ -100,6 +100,7 @@ class List extends Component {
         console.log("deleted", filteredItems);
     }
 
+    // display date input box only if this list needs it (if List is perishable)
     dispDate() {
 
         if (this.state.perishable) {
