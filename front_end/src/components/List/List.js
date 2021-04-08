@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import Items from "./Items";
 import "./List.css";
+import {bake_cookie, read_cookie} from "sfcookies";
 
 // The List functionality
 class List extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            uniqueName: this.props.uniqueName, // List object's unique string identifier for cookies
             listName: this.props.listName, // list name prop e.g. "Reminders"
             itemName: this.props.itemName, // item name prop e.g. "reminder"
             perishable: this.props.perishable, // true if item has expiry sate
@@ -20,13 +22,15 @@ class List extends Component {
     // add item event handler
     addItem(e) {
 
+        const oldList = read_cookie(this.state.uniqueName); // read current list of items from cookie
+        let newList = null; // declare new list which will contain the new added item
         e.preventDefault(); // block reloading the page
 
         if (this._inputElement.value !== "") {
 
-            // make the new item and add it
+            // make the new item
             let newItem = null;
-            if (this.state.perishable) {
+            if (this.state.perishable) { 
                 // if perishable, there is a date
                 newItem = {
                     text: this._inputElement.value, // item name
@@ -46,12 +50,11 @@ class List extends Component {
                     alert("Please enter a valid date and time");
                 }
                 else {
-                    // add and sort by date
-                    this.setState((prevState) => {
-                        let x = prevState.items.concat(newItem);
-                        return {
-                            items: x.sort((a, b) => (a.date > b.date) ? 1 : -1)
-                        };
+                    newList = oldList.concat(newItem); // add new item to end of list
+                    newList.sort((a, b) => (a.date > b.date) ? 1 : -1); // sort the list by date
+                    // set the next state to use the updated list of items
+                    this.setState({
+                            items: newList
                     });
                 }
             }
@@ -62,34 +65,39 @@ class List extends Component {
                     key: Date.now(), // make unique key
                     perishable: this.state.perishable // whether or not item expiry date is ignored
                 };
-                // add unsorted
-                this.setState((prevState) => {
-                    return {
-                        items: prevState.items.concat(newItem)
-                    };
+                newList = oldList.concat(newItem); // add new item to end of list
+                // set the next state to use the updated list of items
+                this.setState({
+                        items: newList
                 });
             }
-            
-            // empty the input text box
-            this._inputElement.value = "";
+
+            bake_cookie(this.state.uniqueName, newList); // make new cookie with updated list of items
+            this._inputElement.value = ""; // empty the input text box
         }
         else { // if user enters empty item
             alert("Please type in the input box");
         }
 
-        console.log(this.state.items);
+        console.log("added", newList);
     }
 
     // delete item event handler
     deleteItem(key) {
+
+        // read current list from cookie
+        const oldList = read_cookie(this.state.uniqueName);
+
         // make new list of items filtering out the deleted item by its key
-        const filteredItems = this.state.items.filter(function (item) {
-            return (item.key !== key);
-        });
+        const filteredItems = oldList.filter(item => (item.key !== key));
 
         this.setState({
-            items: filteredItems // new state of items without deleted item
+            items: filteredItems // set the new state to use the new filtered list of items
         });
+
+        bake_cookie(this.state.uniqueName, filteredItems); // make new cookie with updated list of items
+
+        console.log("deleted", filteredItems);
     }
 
     dispDate() {
@@ -122,7 +130,7 @@ class List extends Component {
                 </form>
 
                 {/* display the list items */}
-                <Items entries={this.state.items} delete={this.deleteItem}/>
+                <Items entries={read_cookie(this.state.uniqueName)} delete={this.deleteItem}/>
             </div>
         );
     }

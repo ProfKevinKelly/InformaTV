@@ -24,6 +24,8 @@
     "jwks-rsa": "^1.12.3",
     "moment": "^2.29.1",
     "mysql": "^2.18.1",
-    "react-router-dom": "^5.2.0"
+    "react-flip-move": "^3.0.4",
+    "react-router-dom": "^5.2.0",
+    "sfcookies": "^1.0.2"
   }
 }

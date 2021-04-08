@@ -37,14 +37,10 @@ class Curator extends Component {
           </div>
             
           {/* Trusted Circle List */}
-          <div className="TClist">
-            <List listName="Trusted Circle Members" itemName="Name (Relation)" perishable={false}/>
-          </div>
+          <List uniqueName="CuratorTCList" listName="Trusted Circle Members" itemName="Name (Relation)" perishable={false}/>
 
           {/* Reminders List */}
-          <div className="Remlist">
-            <List listName="Reminders" itemName="Reminder" perishable={true}/>
-          </div>
+          <List uniqueName="CuratorRemList" listName="Reminders" itemName="Reminder" perishable={true}/>
 
           {/* Messages */}
           <div className="Messages">
