@@ -82,74 +82,132 @@ select.rmndrList {
   background-color: rgb(69, 69, 69);
 }
 
-/* miscellaneous */
+/* elderly person view and curator view main page */
 
-.elderview p {
-  color: white;
-  font-size: 20px;
+.backg{
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(-90deg, rgb(113, 170, 216) 22%, #696969 20%)
 }
 
-.sideButtons {
-  display: block;
-  padding: 10px 24px;
-}
-
-.sideBtn {
-  background: #8f8f8f;
+.sideButtons p{
+  font-size: 30px;
   color: white;
-  position: relative;
-  flex: 0 0 19.7%;
-  left: 10px;
-  margin-top: 1%;
-  height: 100px;
-  width: 180px;
-  margin-bottom: 10px;
   text-align: center;
-  transition: transform 300ms ease 200ms;
+  padding-top: 7%;
 }
+
+.header h1{
+  color: white;
+  font-size: 30px;
+  margin: 20px;
+}
+
+.sideButtons{
+  display: block;
+  position: absolute;
+  top:17%;
+  left: 1%;
+}
+
+.sideBtn{
+  position:relative;
+  flex: 0 0 19.7%;
+
+  left:950px;
+  top:150px;
+  height: 65px;
+  width: 190px;
+  text-align:center;
+  transition:transform 300ms ease 200ms
+}
+
+.currentButtonHighlight{
+  background-color:steelblue;
+}
+
+.buttonsHighlight{
+  background-color: #696969;
+}
+
+.sideButtons:hover .sideBtn {
+  transform: translateY(-10%);
+}
+
+.sideBtn:hover ~.sideBtn{
+  transform: translateY(10%);
+} 
 
 .sideBtn:hover {
   transform: scale(1.2) !important;
 }
 
-.TCview .sideBtn,
-.curatorview .sideBtn {
-  display: inline-block;
-}
-
 .weatherApi {
-  margin-left: 1%;
+ position: absolute;
+ right: 0.8%;
+ bottom:58%;
 }
 
-.elderview .video {
-  margin-left: 32%;
-  margin-right: 5%;
+.video{
+ position: absolute;
+ top: 17%;
+ left:2.3%;
 }
 
-.bottomButtons {
-  display: flex;
-  padding: 10px 54px;
+.tcontainer {
+  width: 78%;
+  overflow: hidden;
+  bottom: 0%;
+  position:absolute;
+  left:0.01%;
+  height: 30px;
 }
 
-.bottomBtn {
-  background: green;
-  position: relative;
-  flex: 0 0 15%;
-  left: 30%;
-  top: -200px;
-  height: 100px;
-  margin: 5px;
-  transition: transform 300ms ease 200ms;
+.ticker-wrap {
+  width: 78%;
+  padding-left: 100%;
+  background-color: #eee;
+  height: 30px;
+}
+  
+@keyframes ticker {
+  100% {
+      transform: translate3d(-100%, 0, 0);
+  }
+}
+  
+.ticker-move {
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 100%;
+  animation-timing-function: linear;
+  animation: ticker 40s infinite;
+}
+  
+.ticker-move:hover {
+  animation-play-state: paused;
 }
 
-.bottomBtn:hover .bottomBtn {
-  transform: translateX(-10%);
+.ticker-item {
+  display: inline-block;
+  padding: 0 40px;
+  font-size: 30px;
 }
 
-.bottomBtn:hover ~ .bottomBtn {
-  transform: translateX(10%);
+.newsChannel{
+  background-color: steelblue;
+  position: absolute;
+  bottom: 0%;
+  width: 150px;
+  height: 30px;
+  left: 0.01%;
+  text-align:center;
 }
 
-.bottomBtn:hover {
-  transform: scale(1.2) !important;
+.newsChannel h2{
+  position:absolute;
+  color:white;
+  font-size: 25px;
+  top:-50%;
+  left:8%;
 }
