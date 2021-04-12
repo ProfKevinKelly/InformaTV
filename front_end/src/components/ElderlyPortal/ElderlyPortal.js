@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Reminders from '../Reminders/Reminders'; // Reminders.js
 import Weather from '../Weather/weather'; // weather.js
+import Chat from '../Chat/Chat'; // Chat.js
 
 class ElderlyPortal extends Component {
   constructor() {
@@ -75,6 +76,9 @@ class ElderlyPortal extends Component {
             </Route>
             <Route path="/Weather">{/* link to weather */}
               <Weather />
+            </Route>
+            <Route path="/Chat">{/* link to messaging chat */}
+              <Chat />
             </Route>
           </Switch>
 
