@@ -4,8 +4,6 @@ import TCtext from '../images/TCtext.jpg'; // text messages image placeholder
 import List from "../List/List"; // list component
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
   Link
 } from "react-router-dom";
 
@@ -43,21 +41,10 @@ class Curator extends Component {
           <List uniqueName="CuratorRemList" listName="Reminders" itemName="Reminder" perishable={true}/>
 
           {/* Messages */}
-          <div className="Messages">
-
-            <div className="MsgT">
-              <h2>Messages</h2>
-              <img src={TCtext} alt="Placeholder"/>
+          <div className="sideButtons">
+            <div className="sideBtn"><br/>
+              <Link to="/Chat"><h2>Messages</h2></Link>
             </div>
-
-            <div className="MsgB">
-              <form action="">
-                <label htmlFor="newmsg">Send a message:</label><br/>
-                <input className="txtbox" type="text" id="newTextMsg" name="newTextMsg"/>
-                <input className="SndBtn" type="button" value="Send" onClick="alert('Message Sent')"/>
-              </form>
-            </div>
-
           </div>
 
         </body>

@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import '../../styles.css'; // css
 import TCtext from '../images/TCtext.jpg'; // messaging placeholder 
 import List from "../List/List"; // list component
+import {
+  BrowserRouter as Router,
+  Link
+} from "react-router-dom";
 
 class TrustedCircle extends Component {
   constructor() {
@@ -24,24 +28,11 @@ class TrustedCircle extends Component {
         <h1>Trusted Circle View</h1>
 
         {/* Messages */}
-        <div className="Messages">
-
-          <div className="MsgT">
-            <h2>Messages</h2>
-            <img src={TCtext} alt="Placeholder"></img>{/* Messages Window */}
+        <div className="sideButtons">
+          <div className="sideBtn"><br/>
+            <Link to="/Chat"><h2>Messages</h2></Link>
           </div>
-
-          <div className="MsgB">
-            <form action="">{/* TODO: implement text messaging */}
-              <label htmlFor="newmsg">Send a message:</label>
-              <br></br>
-              <input className="txtbox" type="text" id="newTextMsg" name="newTextMsg"></input>
-              <input className="SndBtn" type="button" value="Send" onclick="alert('Message Sent')"></input>
-            </form>
-          </div>
-
         </div>
-        <br/>
         
         {/* Reminders */}
         <List uniqueName="TCircleRemList" listName="Reminders" itemName="Reminder" perishable={true}/>

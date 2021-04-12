@@ -82,7 +82,7 @@ select.rmndrList {
   background-color: rgb(69, 69, 69);
 }
 
-/* elderly person view and curator view main page */
+/* miscellaneous */
 
 .elderview p {
   color: white;
@@ -108,16 +108,13 @@ select.rmndrList {
   transition: transform 300ms ease 200ms;
 }
 
-.sideButtons:hover .sideBtn {
-  transform: translateY(-10%);
-}
-
-.sideBtn:hover ~ .sideBtn {
-  transform: translateY(10%);
-}
-
 .sideBtn:hover {
   transform: scale(1.2) !important;
+}
+
+.TCview .sideBtn,
+.curatorview .sideBtn {
+  display: inline-block;
 }
 
 .weatherApi {

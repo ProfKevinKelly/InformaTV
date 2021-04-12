@@ -40,13 +40,13 @@ class ElderlyPortal extends Component {
           <div className="sideButtons">
 
             <div class = "sideBtn"><br/>
-              <Link to="/Weather" style={{padding:20}}>Weather</Link>
+              <Link to="/Weather"><h2>Weather</h2></Link>
             </div>
             <div className="sideBtn"><br/>
-              <Link to="/Reminders" style={{padding:20}}>Reminders</Link>
+              <Link to="/Reminders"><h2>Reminders</h2></Link>
             </div>
             <div className="sideBtn"><br/>
-              <p>Message</p>
+              <Link to="/Chat"><h2>Messages</h2></Link>
             </div>
 
           </div>
