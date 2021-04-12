@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Reminders from '../Reminders/Reminders'; // Reminders.js
 import Weather from '../Weather/weather'; // weather.js
-import Chat from '../Chat/Chat'; // Chat.js
+import Chat from '../Chat/Chat'; //Chat.js
 
 class ElderlyPortal extends Component {
   constructor() {
@@ -27,47 +27,54 @@ class ElderlyPortal extends Component {
   render() {
     return (
       <Router>
-        <body className="elderview">
-
-          <h1>InformaTV</h1>
+        <body class="backg">
 
           {/* Main video content */}
-          <div className="video">
-            <iframe width="100%" height="300px" src="https://www.rte.ie/bosco/components/player/iframe.html?clipid=7&thumbnail=00151820">
-            </iframe>
-          </div>
+          <div className = "video">
+                <iframe width="870" height="480" src="https://www.rte.ie/bosco/components/player/iframe.html?clipid=7&thumbnail=00151820">
+                </iframe>
+            </div>
 
           {/* Sidebar buttons */}
           <div className="sideButtons">
-
-            <div class = "sideBtn"><br/>
-              <Link to="/Weather"><h2>Weather</h2></Link>
-            </div>
-            <div className="sideBtn"><br/>
-              <Link to="/Reminders"><h2>Reminders</h2></Link>
-            </div>
-            <div className="sideBtn"><br/>
-              <Link to="/Chat"><h2>Messages</h2></Link>
+            <div class = "sideBtn currentButtonHighlight">
+              <p>News</p>
             </div>
 
+            <div class = "sideBtn buttonsHighlight">
+              <Link to="/Weather"><p>Weather</p></Link>
+            </div>
+
+            <div class= "sideBtn buttonsHighlight">
+              <Link to="/Reminders"><p>Reminders</p></Link>
+            </div>
+
+            <div class= "sideBtn buttonsHighlight">
+              <Link to="/Chat"><p>Reminders</p></Link>
+            </div>
           </div>
 
-          {/* Bottom content selection buttons */}
-          <div class ="bottomButtons">
+          {/* Location of weather API */}
+          <div className = "weatherApi">
+                <img src="https://i.pinimg.com/originals/71/a4/17/71a417ad67f61d12019794659776448d.jpg" alt="Essential Info" width="240px" height="180px">
+                </img>
+          </div>
 
-            <div className="bottomBtn">
-              <img src="https://img.freepik.com/free-vector/sports-news-with-abstract-background-sports-elements_1419-1926.jpg?size=626&ext=jpg" width="100%" height="100%"/>
-            </div>
-            <div className="bottomBtn">
-              <img src="https://www.gannett-cdn.com/media/2018/02/16/PAGroup/YorkDailyRecord/636543689783396308-weather-news.jpg" width="100%" height="100%"/>
-            </div>
-            <div className="bottomBtn">
-              <img src="https://thefederalist.com/wp-content/uploads/2017/07/Screen-Shot-2017-07-20-at-2.48.26-PM-998x661.png" width="100%" height="100%"/>
-            </div>
-            <div className="bottomBtn">
-              <img src="https://youthincmag.com/wp-content/uploads/2016/03/Gladiator-2000.jpg" width="100%" height="100%"/>
-            </div>
+          {/* Breaking News Banner */}
+          <div class="tcontainer">
+             <div class="ticker-wrap">
+               <div class="ticker-move">
+                <div class="ticker-item">Prince Philip passed away at age 99 at Windsor Castle</div>
+                <div class="ticker-item">Prof. Linda Doyle becomes the first female Provost at Trinity College Dublin</div>
+                <div class="ticker-item">489 new Covid-19 cases and 0 deaths</div>
+                <div class="ticker-item">Bayern Munich vs. PSG: 2-3</div>
+               </div>
+             </div>
+          </div>
 
+         {/*InformaTV News banner*/}
+          <div class="newsChannel">
+            <h2>InformaTV</h2>
           </div>
 
           <Switch>
@@ -77,8 +84,8 @@ class ElderlyPortal extends Component {
             <Route path="/Weather">{/* link to weather */}
               <Weather />
             </Route>
-            <Route path="/Chat">{/* link to messaging chat */}
-              <Chat />
+            <Route path="/Chat">{/* link to messaging chat*/}
+              <Weather />
             </Route>
           </Switch>
 
