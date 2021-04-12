@@ -30,6 +30,7 @@ const ChatInput = (props) => {
 
         if (isEmailProvided && isMessageProvided) {
             props.sendMessage(user.email, message);
+            onMessageSend();
         } 
         else {
             alert('Please insert an user and a message.');
@@ -42,6 +43,9 @@ const ChatInput = (props) => {
 
     const onMessageUpdate = (e) => {
         setMessage(e.target.value);
+    }
+    const onMessageSend = (e) => {
+        setMessage('');
     }
     // getUserTokendata();
     return (

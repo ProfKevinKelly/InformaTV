@@ -31,7 +31,6 @@ const Chat = () => {
                           message: message,
                           user: user
                         }
-                        console.log("received");
                         updatedChat.push(message2);
                     
                         setChat(updatedChat);
@@ -42,13 +41,8 @@ const Chat = () => {
     }, [connection]);
 
     const sendMessage = async (user, message) => {
-        const chatMessage = {
-            user: user,
-            message: message
-        };
         if (connection.connectionStarted) {
             try {
-                console.log("Sending", message);
                 await connection.invoke('SendMessage', message, user);
             }
             catch(e) {
