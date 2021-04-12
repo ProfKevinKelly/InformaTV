@@ -35,9 +35,6 @@ class App extends Component {
           </div>
           <div style={{marginTop:50}}>
             <Link to="/profile" style={{padding:20}}>Profile</Link>
-            <Link to="/ElderlyPortal" style={{padding:20}}>Elderly Portal</Link>
-            <Link to="/Curator" style={{padding:20}}>Curator</Link>
-            <Link to="/TrustedCircle" style={{padding:20}}>Trusted Circle</Link>
             <Link to="/Chat" style={{padding:20}}>Chat</Link>
           </div>
         </header>
