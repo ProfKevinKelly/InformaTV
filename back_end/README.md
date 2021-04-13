@@ -4,6 +4,12 @@ This is the back end code for the react app InformaTV.
 
 The code in this folder was built starting from this sample example: [original code](https://github.com/bradtraversy/react_express_starter)
 
+# Current Progress
+
+Some routes are not yet implemented like Reminders and Messages.
+
+The checkUserInfo is called on button click from profile page.
+
 ## Quick Start
 
 ```bash
