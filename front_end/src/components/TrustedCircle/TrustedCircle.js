@@ -30,7 +30,7 @@ class TrustedCircle extends Component {
         {/* Messages */}
         <div className="sideButtons">
           <div className="sideBtn"><br/>
-            <Link to="/Chat"><h2>Messages</h2></Link>
+            <a onClick={() => {window.location.href="/Chat"}}><h2>Messages</h2></a>
           </div>
         </div>
         

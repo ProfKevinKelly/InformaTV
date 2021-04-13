@@ -37,13 +37,19 @@ class Curator extends Component {
           {/* Trusted Circle List */}
           <List uniqueName="CuratorTCList" listName="Trusted Circle Members" itemName="Name (Relation)" perishable={false}/>
 
-          {/* Reminders List */}
-          <List uniqueName="CuratorRemList" listName="Reminders" itemName="Reminder" perishable={true}/>
+          {/* Reminders List 
+          <List uniqueName="CuratorRemList" listName="Reminders" itemName="Reminder" perishable={true}/>*/}
 
-          {/* Messages */}
+          {/* Messages 
           <div className="sideButtons">
             <div className="sideBtn"><br/>
-              <Link to="/Chat"><h2>Messages</h2></Link>
+              <a onClick={() => {window.location.href="/Chat"}}><h2>Messages</h2></a>
+            </div>
+          </div>*/}
+
+          <div className="sideButtons">
+            <div className="sideBtn"><br/>
+              <a onClick={() => {window.location.href="/TrustedCircle"}}><h2>My Trusted Circle View</h2></a>
             </div>
           </div>
 

@@ -42,15 +42,15 @@ class ElderlyPortal extends Component {
             </div>
 
             <div className = "sideBtn buttonsHighlight">
-              <Link to="/Weather"><p>Weather</p></Link>
+              <a onClick={() => {window.location.href="/Weather"}}><p>Weather</p></a>
             </div>
 
             <div className= "sideBtn buttonsHighlight">
-              <Link to="/Reminders"><p>Reminders</p></Link>
+              <a onClick={() => {window.location.href="/Reminders"}}><p>Reminders</p></a>
             </div>
 
             <div className= "sideBtn buttonsHighlight">
-              <Link to="/Chat"><p>Reminders</p></Link>
+              <a onClick={() => {window.location.href="/Chat"}}><p>Messages</p></a>
             </div>
           </div>
 
