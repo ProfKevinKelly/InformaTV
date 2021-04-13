@@ -8,6 +8,7 @@ var APIRouter = require('./routes/API');
 
 app.use('/API', APIRouter);
 
+// This is the sample test route to make sure the server is running
 app.get('/customers', cors(), (req, res) => {
   const customers = [
     {id: 1, firstName: 'Curator', lastName: 'View'},

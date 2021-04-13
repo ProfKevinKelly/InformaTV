@@ -35,9 +35,12 @@ router.get('/getTokenCheckAuthenticated', cors(), checkJwt, function(req, res) {
 	});
   });
 
+// Tries to get the token from the login
 router.get('/getTokenCheck', cors(), function(req, res, next) {
 	res.send(JSON.stringify({"status": 200, "error": null, "response": "WORKED"}));
 });
+
+// Gets the curator information
 router.get('/getCurator', cors(), function(req, res, next) {
 	let id = req.query.id;
 	db.conn.query('SELECT * FROM test.Curator WHERE id = "' + id.toString() + '"', function (error, results, fields) {
@@ -45,6 +48,8 @@ router.get('/getCurator', cors(), function(req, res, next) {
 		res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
 	});
 });
+
+// Gets the eldery person's portal
 router.get('/getElderlyPortal', cors(), function(req, res, next) {
 	let id = req.query.id;
 	db.conn.query('SELECT * FROM test.ElderlyPortal WHERE curatorID = "' + id.toString() + '"', function (error, results, fields) {
@@ -52,6 +57,8 @@ router.get('/getElderlyPortal', cors(), function(req, res, next) {
 		res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
 	});
 });
+
+// Gets the reminders (does not work yet)
 router.get('/getReminders', function(req, res, next) {
 	db.conn.query('SELECT * FROM test.Reminders', function (error, results, fields) {
 		if (error) throw error;
@@ -59,12 +66,15 @@ router.get('/getReminders', function(req, res, next) {
 	});
 });
 
+// Gets the messages sent from the trusted circle (does not work yet)
 router.get('/getCloseCircleMessages', function(req, res, next) {
 	db.conn.query('SELECT * FROM test.CloseCirlcleMessages', function (error, results, fields) {
 		if (error) throw error;
 		res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
 	});
 });
+
+// Function call for when button is clicked so the appropriate user is routed
 router.get('/checkUserExists', cors(), function(req, res, next) {
 	console.log("ID = ",req.query.id);
 	let id = req.query.id;

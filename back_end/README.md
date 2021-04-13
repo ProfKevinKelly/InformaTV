@@ -1,14 +1,12 @@
-# React Express Starter Pack
+# Back End
 
-> Create full stack apps with React and Express. Run your client and server with a single command. 
+This is the back end code for the react app InformaTV.
 
-### Redux Version
-This version does not include Redux
-[Click Here For Redux Version](https://github.com/bradtraversy/react_redux_express_starter) 
+The code in this folder was built starting from this sample example: [original code](https://github.com/bradtraversy/react_express_starter)
 
 ## Quick Start
 
-``` bash
+```bash
 # Install dependencies for server
 npm install
 
