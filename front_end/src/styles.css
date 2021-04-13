@@ -84,33 +84,31 @@ select.rmndrList {
 
 /* elderly person view and curator view main page */
 
-.backg{
-  height: 100%;
-  width: 100%;
+.elderview {
   background: linear-gradient(-90deg, rgb(113, 170, 216) 22%, #696969 20%)
 }
 
-.sideButtons p{
+.elderview .sideButtons p {
   font-size: 30px;
   color: white;
   text-align: center;
   padding-top: 7%;
 }
 
-.header h1{
+.header h1 {
   color: white;
   font-size: 30px;
   margin: 20px;
 }
 
-.sideButtons{
+.elderview .sideButtons{
   display: block;
   position: absolute;
   top:17%;
   left: 1%;
 }
 
-.sideBtn{
+.elderview .sideBtn {
   position:relative;
   flex: 0 0 19.7%;
 
@@ -122,6 +120,27 @@ select.rmndrList {
   transition:transform 300ms ease 200ms
 }
 
+.curatorview .sideButtons,
+.TCview .sideButtons {
+  display: block;
+  padding: 10px 24px;
+}
+
+.curatorview .sideBtn,
+.TCview .sideBtn {
+  background: #8f8f8f;
+  color: white;
+  position: relative;
+  flex: 0 0 19.7%;
+  left: 45%;
+  margin-top: 1%;
+  height: 100px;
+  width: 180px;
+  margin-bottom: 10px;
+  text-align: center;
+  transition: transform 300ms ease 200ms;
+}
+
 .currentButtonHighlight{
   background-color:steelblue;
 }
@@ -130,11 +149,11 @@ select.rmndrList {
   background-color: #696969;
 }
 
-.sideButtons:hover .sideBtn {
+.elderview .sideButtons:hover .sideBtn {
   transform: translateY(-10%);
 }
 
-.sideBtn:hover ~.sideBtn{
+.elderview .sideBtn:hover ~.sideBtn{
   transform: translateY(10%);
 } 
 

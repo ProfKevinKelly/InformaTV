@@ -27,7 +27,7 @@ class ElderlyPortal extends Component {
   render() {
     return (
       <Router>
-        <body class="backg">
+        <body className="elderview">
 
           {/* Main video content */}
           <div className = "video">
@@ -37,19 +37,19 @@ class ElderlyPortal extends Component {
 
           {/* Sidebar buttons */}
           <div className="sideButtons">
-            <div class = "sideBtn currentButtonHighlight">
+            <div className = "sideBtn currentButtonHighlight">
               <p>News</p>
             </div>
 
-            <div class = "sideBtn buttonsHighlight">
+            <div className = "sideBtn buttonsHighlight">
               <Link to="/Weather"><p>Weather</p></Link>
             </div>
 
-            <div class= "sideBtn buttonsHighlight">
+            <div className= "sideBtn buttonsHighlight">
               <Link to="/Reminders"><p>Reminders</p></Link>
             </div>
 
-            <div class= "sideBtn buttonsHighlight">
+            <div className= "sideBtn buttonsHighlight">
               <Link to="/Chat"><p>Reminders</p></Link>
             </div>
           </div>
@@ -61,19 +61,19 @@ class ElderlyPortal extends Component {
           </div>
 
           {/* Breaking News Banner */}
-          <div class="tcontainer">
-             <div class="ticker-wrap">
-               <div class="ticker-move">
-                <div class="ticker-item">Prince Philip passed away at age 99 at Windsor Castle</div>
-                <div class="ticker-item">Prof. Linda Doyle becomes the first female Provost at Trinity College Dublin</div>
-                <div class="ticker-item">489 new Covid-19 cases and 0 deaths</div>
-                <div class="ticker-item">Bayern Munich vs. PSG: 2-3</div>
+          <div className="tcontainer">
+             <div className="ticker-wrap">
+               <div className="ticker-move">
+                <div className="ticker-item">Prince Philip passed away at age 99 at Windsor Castle</div>
+                <div className="ticker-item">Prof. Linda Doyle becomes the first female Provost at Trinity College Dublin</div>
+                <div className="ticker-item">489 new Covid-19 cases and 0 deaths</div>
+                <div className="ticker-item">Bayern Munich vs. PSG: 2-3</div>
                </div>
              </div>
           </div>
 
          {/*InformaTV News banner*/}
-          <div class="newsChannel">
+          <div className="newsChannel">
             <h2>InformaTV</h2>
           </div>
 
