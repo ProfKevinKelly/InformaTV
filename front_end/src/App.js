@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
-import Customers from './components/customers';
 import ElderlyPortal from './components/ElderlyPortal/ElderlyPortal';
 import LoginButton from './components/Authentication/Login/LoginButton';
 import LogoutButton from './components/Authentication/Logout/LogoutButton';
@@ -33,11 +32,13 @@ class App extends Component {
             <LoginButton/>
             <LogoutButton/>
           </div>
+          {/*This is the links that are shown on the profile page*/}
           <div style={{marginTop:50}}>
             <Link to="/profile" style={{padding:20}}>Profile</Link>
             <Link to="/Chat" style={{padding:20}}>Chat</Link>
           </div>
         </header>
+        {/* This switch path defines the different URL paths that allow the react app to transition between differnt links*/}
         <Switch>
           <Route path="/profile">
             <Profile />
