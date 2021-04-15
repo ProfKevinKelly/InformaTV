@@ -10,7 +10,8 @@ class Weather extends Component{
             city: "",
             country: "",
             humidity: "",
-            pressure: "",
+            wind_speed: "",
+            clouds: "",
             error: ""
         }
         this.getWeather();
@@ -34,7 +35,8 @@ class Weather extends Component{
                 city: response.name,
                 country: response.sys.country,
                 humidity: response.main.humidity,
-                pressure: response.main.pressure,
+                wind_speed: response.wind.speed,
+                clouds: response.weather[0].description,
                 error: ""
             })
         }
@@ -48,18 +50,19 @@ class Weather extends Component{
     render(){
         return(
             <div>
-                {this.state.icon && <img src={`https://openweathermap.org/img/w/${this.state.icon}.png`} alt = "weather icon" width = "50%" 
+                {this.state.icon && <img src={`https://openweathermap.org/img/w/${this.state.icon}.png`} alt = "weather icon" width = "20%" 
                 height = "10%"/>}
                 {this.state.country && this.state.city && <p>Location:&nbsp; 
-                {this.state.city}</p>}
+                    {this.state.city}, {this.state.country}</p>}
                 {this.state.temperature && <p> Temperature:&nbsp;
-                {this.state.temperature}&deg;C</p>}
+                    {this.state.temperature}&deg;C</p>}
                 {this.state.humidity && <p> Humidity:&nbsp;
-                {this.state.humidity}</p>}
-                {this.state.pressure && <p> Pressure:&nbsp;
-                {this.state.pressure} PA</p>}
+                    {this.state.humidity}%</p>}
+                {this.state.wind_speed && <p> Wind Speed:&nbsp;
+                    {this.state.wind_speed} km/h</p>}
+                {this.state.clouds && <p> Weather Description:&nbsp;
+                    {this.state.clouds} </p>}
                 {this.state.error &&<p>{this.state.error}</p>}
-                
             </div>
         );
     }
