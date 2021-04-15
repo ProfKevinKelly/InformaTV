@@ -56,8 +56,7 @@ class ElderlyPortal extends Component {
 
           {/* Location of weather API */}
           <div className = "weatherApi">
-                <img src="https://i.pinimg.com/originals/71/a4/17/71a417ad67f61d12019794659776448d.jpg" alt="Essential Info" width="240px" height="180px">
-                </img>
+                <Weather></Weather>
           </div>
 
           {/* Breaking News Banner */}
