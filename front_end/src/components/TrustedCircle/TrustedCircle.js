@@ -35,7 +35,10 @@ class TrustedCircle extends Component {
         </div>
         
         {/* Reminders */}
-        <List uniqueName="TCircleRemList" listName="Reminders" itemName="Reminder" perishable={true}/>
+        <List 
+          uniqueName="TCircleRemList" 
+          listName="Reminders" 
+          isReminder={true}/>
 
       </body>
     );

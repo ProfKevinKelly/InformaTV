@@ -15,16 +15,22 @@ class Items extends Component {
 
     // make the list of items, one item at a time
     createItems(item) { 
-        if (item.perishable) { // if item has expiry date
+        if (item.isReminder) { // if item is a reminder
             return <li onClick={() => this.delete(item.key)} // delete item if clicked on
                     key={item.key}>
-                       <div>{item.text}</div> {/* item text */}
-                       <div><em>{moment(new Date(item.date)).fromNow()}</em></div> {/* item expiry date */}
+                        <div><b>{item.title}</b></div>
+                        <div>{item.text}</div> {/* item text */}
+                        <div>Due: <em>{moment(new Date(item.date)).fromNow()}</em></div> {/* item expiry date */}
+                        <div>Category: {item.category}</div>
                 </li>
         }
+        // if item is a person
         return <li onClick={() => this.delete(item.key)} // delete item if clicked on
                 key={item.key}>
-                    <div>{item.text}</div>
+                    <div>Name: {item.text}</div>
+                    <div>Relation: {item.relation}</div>
+                    <div>E-mail: {item.email}</div>
+                    <div>Phone: {item.phone}</div>
             </li>
     }
 

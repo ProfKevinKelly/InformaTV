@@ -35,26 +35,11 @@ class Curator extends Component {
           </div>
             
           {/* Trusted Circle List */}
-          <List uniqueName="CuratorTCList" 
-          listName="Trusted Circle Members" 
-          itemName="Name" 
-          perishable={false}/>
-          <select>
-            <option selected value="Family">Family</option>
-            <option value="Friends">Friends</option>
-            <option value="CareTaker">Care Taker</option>
-            <option value="Custom">Custom</option>
-          </select>
-          
-          {/* Reminders List 
-          <List uniqueName="CuratorRemList" listName="Reminders" itemName="Reminder" perishable={true}/>*/}
-
-          {/* Messages 
-          <div className="sideButtons">
-            <div className="sideBtn"><br/>
-              <a onClick={() => {window.location.href="/Chat"}}><h2>Messages</h2></a>
-            </div>
-          </div>*/}
+          <List
+            uniqueName="CuratorTCList" 
+            listName="Trusted Circle Members" 
+            isReminder={false}
+          />
 
           <div className="sideButtons">
             <div className="sideBtn"><br/>

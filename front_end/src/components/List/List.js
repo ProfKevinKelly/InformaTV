@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Items from "./Items";
 import "./List.css";
 import {bake_cookie, read_cookie} from "sfcookies";
+import Select from 'react-select';
 
 // The List functionality
 class List extends Component {
@@ -11,32 +12,37 @@ class List extends Component {
             uniqueName: this.props.uniqueName, // List object's unique string identifier for cookies
             listName: this.props.listName, // list name prop e.g. "Reminders"
             itemName: this.props.itemName, // item name prop e.g. "reminder"
-            perishable: this.props.perishable, // true if items have expiry date
+            isReminder: this.props.isReminder, // true if items are reminders, false if items are people
             items: [], // array of list items
         };
         this.addItem = this.addItem.bind(this); // `this` in addItem points to this List
         this.deleteItem = this.deleteItem.bind(this); // `this` in deleteItem points to this List
-        this.dispDate = this.dispDate.bind(this); // `this` in dispDate points to this List
+        this.remInput = this.remInput.bind(this); // `this` in dispDate points to this List
+        this.pepInput = this.pepInput.bind(this);
     }
 
     // add item event handler
     addItem(e) {
 
-        const oldList = read_cookie(this.state.uniqueName); // read current list of items from cookie
+        let oldList = read_cookie(this.state.uniqueName); // read current list of items from cookie
+        if(oldList === null) {
+            oldList = []; // empty list if no cookie
+        }
         let newList = null; // declare new list which will contain the new added item
         e.preventDefault(); // block reloading the page
+        let newItem = null; // make the new item
 
-        if (this._inputElement.value !== "") {
-
-            // make the new item
-            let newItem = null;
-            if (this.state.perishable) { 
-                // if perishable, there is a date
+        if (this.state.isReminder) { 
+            if (this.inputCategory.value !== "" && this.inputText.value !== "" && this.inputTitle.value !== "") {
+                // if reminder
                 newItem = {
-                    text: this._inputElement.value, // item name
                     key: Date.now(), // make unique key
-                    date: this.date.value, // item expiry date
-                    perishable: this.state.perishable // whether or not item expiry date is ignored
+                    text: this.inputText.value,
+                    title: this.inputTitle.value,
+                    category: this.inputCategory.value,
+                    date: this.inputDate.value,
+                    preDate: this.inputPreDate.value,
+                    isReminder: true
                 };
                 // get today's date and time in the correct string format
                 let today = new Date();
@@ -45,9 +51,9 @@ class List extends Component {
                     + ((today.getDate() < 10)?"0":"") + today.getDate() + "T"
                     + ((today.getHours() < 10)?"0":"") + today.getHours() + ":"
                     + ((today.getMinutes() < 10)?"0":"") + today.getMinutes();
-                // prevent past reminders
-                if (newItem.date <= currentDate) {
-                    alert("Please enter a valid date and time");
+                // prevent invalid reminders
+                if (newItem.date <= currentDate || newItem.preDate <= currentDate || newItem.preDate >= newItem.date) {
+                    alert("Please enter two valid dates");
                 }
                 else {
                     newList = oldList.concat(newItem); // add new item to end of list
@@ -56,28 +62,45 @@ class List extends Component {
                     this.setState({
                             items: newList
                     });
+                    // empty input boxes
+                    this.inputText.value = "";
+                    this.inputCategory = null;
+                    this.inputDate.value = "";
+                    this.inputTitle.value = "";
+                    this.inputPreDate.value = "";
                 }
             }
             else {
-                // if non-perishable, date is null, so don't access it
+                alert("Please enter Reminder title, text and category!");
+            }
+        }
+        else {
+            if (this.inputText.value !== "" && this.inputRelation.value !== "" && this.inputEmail.value !== "" && this.inputPhone.value !== "") {
+                // if person
                 newItem = {
-                    text: this._inputElement.value, // item name
                     key: Date.now(), // make unique key
-                    perishable: this.state.perishable // whether or not item expiry date is ignored
+                    text: this.inputText.value,
+                    relation: this.inputRelation.value,
+                    email: this.inputEmail.value,
+                    phone: this.inputPhone.value,
+                    isReminder: false
                 };
                 newList = oldList.concat(newItem); // add new item to end of list
                 // set the next state to use the updated list of items
                 this.setState({
                         items: newList
                 });
+                // empty input boxes
+                this.inputText.value = "";
+                this.inputRelation.value = "";
+                this.inputEmail.value = "";
+                this.inputPhone.value = "";
             }
-
-            bake_cookie(this.state.uniqueName, newList); // make new cookie with updated list of items
-            this._inputElement.value = ""; // empty the input text box
+            else {
+                alert("Please enter a name, relation, email address and phone number!")
+            }
         }
-        else { // if user enters empty item
-            alert("Please type in the input box");
-        }
+        bake_cookie(this.state.uniqueName, newList); // make new cookie with updated list of items
 
         console.log("added", newList);
     }
@@ -100,38 +123,112 @@ class List extends Component {
         console.log("deleted", filteredItems);
     }
 
-    // display date input box only if this list needs it (if List is perishable)
-    dispDate() {
+    // display reminder input fields
+    remInput() {
 
-        if (this.state.perishable) {
+        if (this.state.isReminder) {
+            // dropdown categories
+            const categories = [
+                {value: 'General', label: 'General'},
+                {value: 'Urgent', label: 'Urgent'},
+                {value: 'Routine', label: 'Routine'}
+            ]
+            // some basic custom styles to make dropdown menu more readable
+            const customStyles = {
+                option: (provided, state) => ({
+                  ...provided,
+                  borderBottom: '1px dotted pink',
+                  color: state.isSelected ? 'orange' : 'blue',
+                  padding: 10,
+                })
+            }
+            // the input fields
+            return <div>
+                <input
+                    ref={(a) => this.inputTitle = a}
+                    placeholder="Reminder Title"> 
+                </input>
+                <br/>
+                <input
+                    ref={(a) => this.inputText = a}
+                    placeholder="Reminder Text"> 
+                </input>
+                <br/>
+                <Select 
+                    className="dropdown"
+                    options={categories}
+                    placeholder="Reminder Category"
+                    styles={customStyles}
+                    isSearchable={false}
+                    onChange={(a) => this.inputCategory = a}
+                    value={this.inputCategory}>
+                </Select>
+                <p>Due:</p>
+                <input 
+                    type="datetime-local"
+                    ref={(a) => this.inputDate = a}>
+                </input>
+                <br/>
+                <p>Remind me early on:</p>
+                <input
+                    type="datetime-local"
+                    ref={(a) => this.inputPreDate = a}>
+                </input>
+            </div>
+        }
+        return null;
+    }
+
+    // display person input fields
+    pepInput() {
+
+        if (this.state.isReminder === false) {
             
-            return <div><input type="datetime-local" ref={(a) => this.date = a}></input></div>
+            return <div>
+                <input
+                    ref={(a) => this.inputText = a}
+                    placeholder="Name"> 
+                </input>
+                <br/>
+                <input
+                    ref={(a) => this.inputRelation = a}
+                    placeholder="Relation to the elder"> 
+                </input>
+                <br/>
+                <input
+                    ref={(a) => this.inputEmail = a}
+                    placeholder="Email Address"> 
+                </input>
+                <br/>
+                <input
+                    ref={(a) => this.inputPhone = a}
+                    placeholder="Phone Number"> 
+                </input>
+            </div>
         }
         return null;
     }
 
     render() {
+        let theList = read_cookie(this.state.uniqueName); // read current list of items from cookie
+        if(theList === null) {
+            theList = []; // empty list if no cookie
+        }
         return(
             <div className="ListMain">
                 {/* display the list header */}
                 <h2>{this.state.listName}</h2> {/* name of the list */}
 
                 <form onSubmit={this.addItem}> {/* add list item on submit */}
-                    {/* text input box */}
-                    <input
-                        ref={(a) => this._inputElement = a}
-                        placeholder={this.state.itemName}> 
-                    </input>
-                    <br/>
-                    {/* expiry date input box */}
-                    <this.dispDate></this.dispDate>
-                    <br/>
+                    {/* choose input fields */}
+                    <this.remInput></this.remInput>
+                    <this.pepInput></this.pepInput>
                     {/* add button */}
                     <button type="submit">Add</button>
                 </form>
 
                 {/* display the list items */}
-                <Items entries={read_cookie(this.state.uniqueName)} delete={this.deleteItem}/>
+                <Items entries={theList} delete={this.deleteItem}/>
             </div>
         );
     }

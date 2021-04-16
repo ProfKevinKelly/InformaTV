@@ -4,17 +4,39 @@
     background-color: rgb(56, 56, 56);
     padding: 10px;
     margin: 10px;
+    margin-right: 15%;
+    margin-left: 15%;
     color: rgb(255, 255, 255);
     /*float: left;*/
     text-align: center;
+}
+
+.ListMain p {
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.ListMain h2 {
+    margin-bottom: 10px;
+    text-decoration: underline;
 }
 
 .ListMain input { /* in List.js */
     padding: 10px;
     margin-bottom: 10px;
     font-size: 16px;
-    border: 2px solid #FFF;
-    width: 50%;
+    width: 70%;
+}
+
+.ListMain .dropdown {
+    margin: 0;
+    margin-left: 14.5%;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    width: 71%;
 }
 
 .ListMain button { /* in List.js */
@@ -37,7 +59,7 @@
 .ListMain .theList { /* in Items.js */
     list-style: none;
     padding-left: 0;
-    width: 85%;
+    width: 70%;
 }
 
 .ListMain .theList li {
