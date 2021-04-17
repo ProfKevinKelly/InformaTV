@@ -22,12 +22,15 @@ If the makefile doesn't work then:
 
 ## Objectives
 
-- :heavy_check_mark: Creating a linked back-end, database and front-end.
-- :heavy_check_mark: Presenting a simple visual format for the elderly person.
-- :white_check_mark: Allowing controls to allow the curator to modify and select content of the elderly’s view.
-- :heavy_check_mark: Making interactions between the trusted circle and the elderly person possible and as simple as possible.
-- :heavy_check_mark: Test all the functionalities and make sure it all works together.
-- :heavy_check_mark:Deliver the final product of the system to the client and the future potential developers.
+:white_check_mark: = Completed
+:ballot_box_with_check: = Could not Complete
+
+- :white_check_mark: Creating a linked back-end, database and front-end.
+- :white_check_mark: Presenting a simple visual format for the elderly person.
+- :ballot_box_with_check: Allowing controls to allow the curator to modify and select content of the elderly’s view.
+- :white_check_mark: Making interactions between the trusted circle and the elderly person possible and as simple as possible.
+- :white_check_mark: Test all the functionalities and make sure it all works together.
+- :white_check_mark:Deliver the final product of the system to the client and the future potential developers.
 
 ## Further Progress and Development Ideas
 
