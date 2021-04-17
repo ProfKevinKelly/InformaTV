@@ -33,7 +33,7 @@ class List extends Component {
         let newItem = null; // make the new item
 
         if (this.state.isReminder) { 
-            if (this.inputCategory.value !== "" && this.inputText.value !== "" && this.inputTitle.value !== "") {
+            if (this.inputCategory !== undefined && this.inputText.value !== "" && this.inputTitle.value !== "") {
                 // if reminder
                 newItem = {
                     key: Date.now(), // make unique key
@@ -62,9 +62,9 @@ class List extends Component {
                     this.setState({
                             items: newList
                     });
+                    console.log(this.inputDate.value);
                     // empty input boxes
                     this.inputText.value = "";
-                    this.inputCategory = null;
                     this.inputDate.value = "";
                     this.inputTitle.value = "";
                     this.inputPreDate.value = "";
@@ -165,13 +165,20 @@ class List extends Component {
                 </Select>
                 <p>Due:</p>
                 <input 
+                    // datetime-local doesn't show a selector in Firefox or Safari
                     type="datetime-local"
+                    placeholder="e.g. 2021-06-18T16:05"
+                    pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}"
+                    required
                     ref={(a) => this.inputDate = a}>
                 </input>
                 <br/>
                 <p>Remind me early on:</p>
                 <input
                     type="datetime-local"
+                    placeholder="e.g. 2021-06-18T16:00"
+                    pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}"
+                    required
                     ref={(a) => this.inputPreDate = a}>
                 </input>
             </div>
