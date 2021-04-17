@@ -16,6 +16,14 @@ To run the React app use: `make execute`
 
 If the makefile doesn't work then:
 
-- navigate to *front_end* and use: `npm i`
-- navigate to *back_end* and use: `npm i`
+- navigate to _front_end_ and use: `npm i`
+- navigate to _back_end_ and use: `npm i`
 - use: `npm run dev`
+
+## Further Progress and Development Ideas
+
+Because this project was part of a course project we were limited on time being able to develop the Portal, which is why there are a lot of features and functionality that have not been finished or fully implemented. Some ideas and concepts that can be worked on are:
+
+- Interactivity like Netflix for a TV app [spatial interactivity](https://github.com/NoriginMedia/react-spatial-navigation)
+
+- Reminder calendar integration [react calendar](https://www.npmjs.com/package/react-reminder-calendar)
