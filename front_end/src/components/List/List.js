@@ -9,7 +9,7 @@ class List extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            uniqueName: this.props.uniqueName, // List object's unique string identifier for cookies
+            uniqueName: this.props.uniqueName, // List's unique string identifier for cookies
             listName: this.props.listName, // list name prop e.g. "Reminders"
             itemName: this.props.itemName, // item name prop e.g. "reminder"
             isReminder: this.props.isReminder, // true if items are reminders, false if items are people
