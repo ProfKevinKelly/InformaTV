@@ -23,6 +23,7 @@ If the makefile doesn't work then:
 ## Objectives
 
 :white_check_mark: = Completed
+
 :ballot_box_with_check: = Could not Complete
 
 - :white_check_mark: Creating a linked back-end, database and front-end.
