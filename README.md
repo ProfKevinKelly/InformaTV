@@ -20,6 +20,10 @@ If the makefile doesn't work then:
 - navigate to _back_end_ and use: `npm i`
 - use: `npm run dev`
 
+## Objectives
+
+- Creating a linked back-end, database and front-end [x]
+
 ## Further Progress and Development Ideas
 
 Because this project was part of a course project we were limited on time being able to develop the Portal, which is why there are a lot of features and functionality that have not been finished or fully implemented. Some ideas and concepts that can be worked on are:
