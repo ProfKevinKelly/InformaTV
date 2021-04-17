@@ -22,7 +22,7 @@ If the makefile doesn't work then:
 
 ## Objectives
 
-- Creating a linked back-end, database and front-end [x]
+- [x] Creating a linked back-end, database and front-end
 
 ## Further Progress and Development Ideas
 
