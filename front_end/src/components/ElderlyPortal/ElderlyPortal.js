@@ -84,7 +84,7 @@ class ElderlyPortal extends Component {
               <Weather />
             </Route>
             <Route path="/Chat">{/* link to messaging chat*/}
-              <Weather />
+              <Chat />
             </Route>
           </Switch>
 

@@ -12,6 +12,16 @@ class Weather extends Component{
             humidity: "",
             wind_speed: "",
             clouds: "",
+            lon: "",
+            lat:"",
+            //daily info
+            dt: "",
+            min: "",
+            max: "",
+            daily_wind_speed: "",
+            daily_icon: "",
+            daily_humidity: "",
+            daily_description: "",
             error: ""
         }
         this.getWeather();
@@ -25,6 +35,9 @@ class Weather extends Component{
 
         const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${weatherApiKey}`)
 
+        let daily_api_call = null;
+        let daily_response;
+
         const response = await api_call.json();
         console.log("Response = ", response);
 
@@ -37,8 +50,27 @@ class Weather extends Component{
                 humidity: response.main.humidity,
                 wind_speed: response.wind.speed,
                 clouds: response.weather[0].description,
+                lon: response.coord.lon,
+                lat: response.coord.lat,
                 error: ""
             })
+
+            daily_api_call = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${this.state.lat}&lon=${this.state.lon}&units=metric&appid=${weatherApiKey}`)
+
+            daily_response = await daily_api_call.json();
+            console.log("Daily_Response = ", daily_response);
+
+            //not done for now
+            this.setState({
+                dt: daily_response.daily[0].dt.toString(),
+                min: daily_response.daily[0].temp.min.toFixed(0),
+                max: daily_response.daily[0].temp.max.toFixed(0),
+                daily_wind_speed: daily_response.daily[0].wind_speed,
+                daily_icon: daily_response.daily[0].weather[0].icon,
+                daily_humidity: daily_response.daily[0].humidity,
+                daily_description: daily_response.daily[0].weather[0].description
+            })
+
         }
         else{
             this.setState({
