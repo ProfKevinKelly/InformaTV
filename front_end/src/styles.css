@@ -15,7 +15,7 @@ body {
   text-align: center;
   height: 100%;
   width: 100%;
-  background: linear-gradient(90deg, rgb(113, 170, 216) 22%, #696969 20%);
+  background: linear-gradient(-90deg, rgb(113, 170, 216) 22%, #696969 20%);
 }
 
 a {
