@@ -38,3 +38,23 @@ Because this project was part of a course project we were limited on time being 
 - Reminder calendar integration [react calendar](https://www.npmjs.com/package/react-reminder-calendar)
 
 - Messaging feature like Facebook Messenger [instant chat](https://github.com/paul-pagnan/react-instant-chat)
+
+## back_end
+
+Everything to do with the server, database connection and backend
+
+## ChatApplication
+
+Chat implementation for the messages
+
+## front_end
+
+Everything to do with main React App, UI and front_end views
+
+## gitignore
+
+gitignore for functional and reliable group working
+
+## Makefile
+
+Makefile to automatically install dependancies and update npm while also starting the front_end and back_end concurrently.
