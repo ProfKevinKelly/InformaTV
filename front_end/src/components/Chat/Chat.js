@@ -12,7 +12,7 @@ const Chat = () => {
     latestChat.current = chat;
 
     useEffect(() => {
-        const newConnection = new HubConnectionBuilder()
+        const newConnection = new HubConnectionBuilder() // Create connection to hub
             .withUrl('https://localhost:44320/hubs/chathub')
             .withAutomaticReconnect()
             .build();
@@ -22,10 +22,10 @@ const Chat = () => {
 
     useEffect(() => {
         if (connection) {
-            connection.start()
+            connection.start() // Start the connection
                 .then(result => {
                     console.log('Connected!');
-                    connection.on('ReceiveMessage', (message, user) => {
+                    connection.on('ReceiveMessage', (message, user) => { // Listen for 'ReceiveMessage' Event from hub
                         const updatedChat = [...latestChat.current];
                         let message2 = {
                           message: message,
@@ -43,7 +43,7 @@ const Chat = () => {
     const sendMessage = async (user, message) => {
         if (connection.connectionStarted) {
             try {
-                await connection.invoke('SendMessage', message, user);
+                await connection.invoke('SendMessage', message, user);// This is how to invoke a method on the hub
             }
             catch(e) {
                 console.log(e);

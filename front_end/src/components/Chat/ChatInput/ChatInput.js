@@ -3,24 +3,8 @@ import './ChatInput.css'; // css
 import {useAuth0} from '@auth0/auth0-react';
 
 const ChatInput = (props) => {
-    // const [user, setUser] = useState('');
     const [message, setMessage] = useState('');
     const {user, isAuthenticated, getAccessTokenSilently} = useAuth0();
-
-    // const getUserTokendata = async () => {
-    //     const domain = "dev-l7o00ivv.eu.auth0.com";
-    
-    //     try {
-    //       accessToken = await getAccessTokenSilently({
-    //         audience: `https://${domain}/api/v2/`,
-    //         scope: "read:current_user",
-    //       });
-    //       localStorage.setItem('accessToken', accessToken)
-    //     } catch (e) {
-    //       console.log(e.message);
-    //     }
-    //   };
-    // }
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -47,7 +31,6 @@ const ChatInput = (props) => {
     const onMessageSend = (e) => {
         setMessage('');
     }
-    // getUserTokendata();
     return (
         isAuthenticated &&
         <form class="form-container"
