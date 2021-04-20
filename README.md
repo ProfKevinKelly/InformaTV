@@ -26,9 +26,9 @@ To run the React app use: `make execute`
 
 If the makefile doesn't work then:
 
-- navigate to _front_end_ and use: `npm i`
-- navigate to _back_end_ and use: `npm i`
-- use: `npm run dev`
+- navigate to *front_end* and use: `npm i`
+- navigate to *back_end* and use: `npm i`
+- while in *back_end* use: `npm run dev`
 
 ## Objectives
 
