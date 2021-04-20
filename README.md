@@ -36,3 +36,5 @@ Because this project was part of a course project we were limited on time being 
 - Interactivity like Netflix for a TV app [spatial interactivity](https://github.com/NoriginMedia/react-spatial-navigation)
 
 - Reminder calendar integration [react calendar](https://www.npmjs.com/package/react-reminder-calendar)
+
+- Messaging feature like Facebook Messenger [instant chat](https://github.com/paul-pagnan/react-instant-chat)
