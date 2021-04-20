@@ -58,6 +58,7 @@ test file for backend
 ### Quick Start
 
 ```bash
+# cd into back_end first and then continue with the rest 
 # Install dependencies for server
 npm install
 

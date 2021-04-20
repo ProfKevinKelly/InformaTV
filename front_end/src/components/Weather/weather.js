@@ -5,6 +5,7 @@ class Weather extends Component{
     constructor(){
         super();
         this.state = {
+            //current weather info
             icon: "",
             temperature: "",
             city: "",
@@ -14,7 +15,7 @@ class Weather extends Component{
             clouds: "",
             lon: "",
             lat:"",
-            //daily info
+            //7 day forecast info
             dt: {dt1:"",dt2:"",dt3:"",dt4:"",dt5:"",dt6:"",dt7:""},
             min: {min1:"",min2:"",min3:"",min4:"",min5:"",min6:"",min7:""},
             max: {max1:"",max2:"",max3:"",max4:"",max5:"",max6:"",max7:""},
@@ -30,6 +31,8 @@ class Weather extends Component{
     async getWeather() {
         const city = 'Dublin';
         const country = 'ie';
+        //apiKey can be acquired at https://openweathermap.org/price for free
+        //or if you want or need a better API's
         const weatherApiKey = '94d6a34f4bc6a9dde98f67998acffbcb';
         ;
 
@@ -40,8 +43,12 @@ class Weather extends Component{
 
         const response = await api_call.json();
         console.log("Response = ", response);
-
+        
+        //this works only if there is a valid city and counrty name 
+        //and if there was a response from API
         if(city && country && response.weather){
+            //these are main information used in currents weather 
+            //longitute and latitude are used to get 7 day forecast 
             this.setState({
                 icon: response.weather[0].icon,
                 temperature: response.main.temp.toFixed(0),
@@ -55,12 +62,15 @@ class Weather extends Component{
                 error: ""
             })
 
+            //fetching json information for 7 day forecast(also
+            //contains hourly info in 2 days and minutely in the closest hour)
             daily_api_call = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${this.state.lat}&lon=${this.state.lon}&units=metric&appid=${weatherApiKey}`)
 
             daily_response = await daily_api_call.json();
             console.log("Daily_Response = ", daily_response);
 
-            //not done for now
+            //this is all the information for 7 days forecast can be used here or in
+            //forecast.js which extends this class
             this.setState({
                 //dates
                 dt1: daily_response.daily[0].dt.toString(),
@@ -122,15 +132,18 @@ class Weather extends Component{
 
         }
         else{
+            //in the unlikely case of not having response 
+            //or a valid city/country name
             this.setState({
-                error: "Sorry your curator messed up(dolboeb)"
+                error: "Error228: Sorry your curator messed up(dolboeb)"
             })
         }
     }
 
     render(){
         return(
-            <div class="ul">
+            //current weather displaying
+            <div>
                 {this.state.icon && <img src={`https://openweathermap.org/img/w/${this.state.icon}.png`} alt = "weather icon" width = "20%" 
                 height = "10%"/>}
                 {this.state.country && this.state.city && <p>Location:&nbsp; 
@@ -144,10 +157,6 @@ class Weather extends Component{
                 {this.state.clouds && <p> Weather Description:&nbsp;
                     {this.state.clouds} </p>}
                 {this.state.error &&<p>{this.state.error}</p>}
-                {this.state.dt3 && <p>Date3:&nbsp;
-                    {this.state.dt3}</p>}
-                {this.state.min1 && <p>min1:&nbsp;
-                    {this.state.min1}</p>}
             </div>
 
         );

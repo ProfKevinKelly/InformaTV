@@ -52,7 +52,8 @@ class ElderlyPortal extends Component {
             </div>
           </div>
 
-          {/* Location of weather API */}
+          {/* Location of weather API, also this displays currents weather in
+          Elderly portal */}
           <div className = "weatherApi">
             <Weather></Weather>
           </div>

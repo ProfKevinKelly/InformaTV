@@ -2,11 +2,48 @@ ul {
     padding:0;
     list-style:none;
     width: 30%;
-    margin-top:10%;
+    margin-top:auto;
   }
   
   li{
     font-size:1.2rem;
     line-height: 2rem;
     border-bottom: 1px dotted #777;
+  }
+
+
+  /* in case u need table for forecast or weather here are table */
+  .Table {
+    display: table;
+    height: 100%;
+    width: 100%; /*Optional*/
+    table-layout: fixed; /*Optional*/
+    border-spacing: 10px; /*Optional*/
+  }
+
+  /* in case u need table for forecast or weather here are rows */
+  .channel-row {
+    display: table;
+    cursor: pointer;
+    height: 10vh;
+    border-bottom: 1px solid darkblue;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%; /*Optional*/
+    table-layout: fixed; /*Optional*/
+    border-spacing: 10px; /*Optional*/
+  }
+
+  /* in case u need table for forecast or weather here are coulmns */
+  .channel-column {
+    display: table;
+    cursor: pointer;
+    height: 10vh;
+    border-bottom: 1px solid darkblue;
+    margin-right: 5px;
+    margin-left: 5px;
+    height: 100%;
+    width: 14.2%; /*Optional*/
+    table-layout: fixed; /*Optional*/
+    border-spacing: 10px; /*Optional*/
   }
