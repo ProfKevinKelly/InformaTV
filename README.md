@@ -4,11 +4,11 @@ This is the Software Engineering Project for Group 29
 Client: TCD - Department of Mechanical, Manufacturing & Biomedical Engineering
 Project: AI for Surgery: Information Portal for Eldery in the Home (InformaTV Project number 30)
 
-Ajchan Mamedov - CS Second Year
-Alexandra Ichim - CSB Second Year
-Kilian Ronan - CS Third Year
-Liam Bartsch - CS Third Year
-Michael Makarenko - CS Second Year
+- Ajchan Mamedov - CS Second Year
+- Alexandra Ichim - CSB Second Year
+- Kilian Ronan - CS Third Year
+- Liam Bartsch - CS Third Year
+- Michael Makarenko - CS Second Year
 
 ## Installation
 
