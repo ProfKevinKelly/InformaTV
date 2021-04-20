@@ -15,13 +15,13 @@ class Weather extends Component{
             lon: "",
             lat:"",
             //daily info
-            dt: "",
-            min: "",
-            max: "",
-            daily_wind_speed: "",
-            daily_icon: "",
-            daily_humidity: "",
-            daily_description: "",
+            dt: {dt1:"",dt2:"",dt3:"",dt4:"",dt5:"",dt6:"",dt7:""},
+            min: {min1:"",min2:"",min3:"",min4:"",min5:"",min6:"",min7:""},
+            max: {max1:"",max2:"",max3:"",max4:"",max5:"",max6:"",max7:""},
+            daily_wind_speed: {dws1:"",dws2:"",dws3:"",dws4:"",dws5:"",dws6:"",dws7:""},
+            daily_icon: {di1:"",di2:"",di3:"",di4:"",di5:"",di6:"",di7:""},
+            daily_humidity: {dh1:"",dh2:"",dh3:"",dh4:"",dh5:"",dh6:"",dh7:""},
+            daily_description: {dd1:"",dd2:"",dd3:"",dd4:"",dd5:"",dd6:"",dd7:""},
             error: ""
         }
         this.getWeather();
@@ -62,13 +62,62 @@ class Weather extends Component{
 
             //not done for now
             this.setState({
-                dt: daily_response.daily[0].dt.toString(),
-                min: daily_response.daily[0].temp.min.toFixed(0),
-                max: daily_response.daily[0].temp.max.toFixed(0),
-                daily_wind_speed: daily_response.daily[0].wind_speed,
-                daily_icon: daily_response.daily[0].weather[0].icon,
-                daily_humidity: daily_response.daily[0].humidity,
-                daily_description: daily_response.daily[0].weather[0].description
+                //dates
+                dt1: daily_response.daily[0].dt.toString(),
+                dt2: daily_response.daily[1].dt.toString(),
+                dt3: daily_response.daily[2].dt.toString(),
+                dt4: daily_response.daily[3].dt.toString(),
+                dt5: daily_response.daily[4].dt.toString(),
+                dt6: daily_response.daily[5].dt.toString(),
+                dt7: daily_response.daily[6].dt.toString(),
+                //min temps
+                min1: daily_response.daily[0].temp.min.toFixed(0),
+                min2: daily_response.daily[1].temp.min.toFixed(0),
+                min3: daily_response.daily[2].temp.min.toFixed(0),
+                min4: daily_response.daily[3].temp.min.toFixed(0),
+                min5: daily_response.daily[4].temp.min.toFixed(0),
+                min6: daily_response.daily[5].temp.min.toFixed(0),
+                min7: daily_response.daily[6].temp.min.toFixed(0),
+                //max temps
+                max1: daily_response.daily[0].temp.max.toFixed(0),
+                max2: daily_response.daily[1].temp.max.toFixed(0),
+                max3: daily_response.daily[2].temp.max.toFixed(0),
+                max4: daily_response.daily[3].temp.max.toFixed(0),
+                max5: daily_response.daily[4].temp.max.toFixed(0),
+                max6: daily_response.daily[5].temp.max.toFixed(0),
+                max7: daily_response.daily[6].temp.max.toFixed(0),
+                //daily wind speeds
+                dws1: daily_response.daily[0].wind_speed,
+                dws2: daily_response.daily[1].wind_speed,
+                dws3: daily_response.daily[2].wind_speed,
+                dws4: daily_response.daily[3].wind_speed,
+                dws5: daily_response.daily[4].wind_speed,
+                dws6: daily_response.daily[5].wind_speed,
+                dws7: daily_response.daily[6].wind_speed,
+                //daily weather icons
+                di1: daily_response.daily[0].weather[0].icon,
+                di2: daily_response.daily[1].weather[0].icon,
+                di3: daily_response.daily[2].weather[0].icon,
+                di4: daily_response.daily[3].weather[0].icon,
+                di5: daily_response.daily[4].weather[0].icon,
+                di6: daily_response.daily[5].weather[0].icon,
+                di7: daily_response.daily[6].weather[0].icon,
+                //daily humidity
+                dh1: daily_response.daily[0].humidity,
+                dh2: daily_response.daily[1].humidity,
+                dh3: daily_response.daily[2].humidity,
+                dh4: daily_response.daily[3].humidity,
+                dh5: daily_response.daily[4].humidity,
+                dh6: daily_response.daily[5].humidity,
+                dh7: daily_response.daily[6].humidity,
+                //daily weather descriptions
+                dd1: daily_response.daily[0].weather[0].description,
+                dd2: daily_response.daily[1].weather[0].description,
+                dd3: daily_response.daily[2].weather[0].description,
+                dd4: daily_response.daily[3].weather[0].description,
+                dd5: daily_response.daily[4].weather[0].description,
+                dd6: daily_response.daily[5].weather[0].description,
+                dd7: daily_response.daily[6].weather[0].description,
             })
 
         }
@@ -81,7 +130,7 @@ class Weather extends Component{
 
     render(){
         return(
-            <div>
+            <div class="ul">
                 {this.state.icon && <img src={`https://openweathermap.org/img/w/${this.state.icon}.png`} alt = "weather icon" width = "20%" 
                 height = "10%"/>}
                 {this.state.country && this.state.city && <p>Location:&nbsp; 
@@ -95,7 +144,12 @@ class Weather extends Component{
                 {this.state.clouds && <p> Weather Description:&nbsp;
                     {this.state.clouds} </p>}
                 {this.state.error &&<p>{this.state.error}</p>}
+                {this.state.dt3 && <p>Date3:&nbsp;
+                    {this.state.dt3}</p>}
+                {this.state.min1 && <p>min1:&nbsp;
+                    {this.state.min1}</p>}
             </div>
+
         );
     }
 

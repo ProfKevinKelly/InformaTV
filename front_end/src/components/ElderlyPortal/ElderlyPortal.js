@@ -9,6 +9,7 @@ import {
 import Reminders from '../Reminders/Reminders'; // Reminders.js
 import Weather from '../Weather/weather'; // weather.js
 import Chat from '../Chat/Chat'; //Chat.js
+import Forecast from'../Weather/forecast'; //forecast.js
 
 class ElderlyPortal extends Component {
   constructor() {
@@ -42,7 +43,7 @@ class ElderlyPortal extends Component {
             </div>
 
             <div className = "sideBtn buttonsHighlight">
-              <a onClick={() => {window.location.href="/Weather"}}><p>Weather</p></a>
+              <a onClick={() => {window.location.href="/Forecast"}}><p>7 day forecast</p></a>
             </div>
 
             <div className= "sideBtn buttonsHighlight">
@@ -80,8 +81,8 @@ class ElderlyPortal extends Component {
             <Route path="/Reminders">{/* link to reminders */}
               <Reminders />
             </Route>
-            <Route path="/Weather">{/* link to weather */}
-              <Weather />
+            <Route path="/Forecast">{/* link to forecast */}
+              <Forecast />
             </Route>
             <Route path="/Chat">{/* link to messaging chat*/}
               <Chat />
