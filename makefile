@@ -1,7 +1,3 @@
-git:
-	git add *
-	git commit -m "$m"
-	git push
 execute:
 	cd front_end;\
 	npm i;
