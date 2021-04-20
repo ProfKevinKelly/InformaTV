@@ -11,9 +11,7 @@ app.use('/API', APIRouter);
 // This is the sample test route to make sure the server is running
 app.get('/customers', cors(), (req, res) => {
   const customers = [
-    {id: 1, firstName: 'Curator', lastName: 'View'},
-    {id: 2, firstName: 'Elderly', lastName: 'Person'},
-    {id: 3, firstName: 'Trusted', lastName: 'Circle'},
+    {id: 1, firstName: 'Curator', lastName: 'View'}
   ];
 
   res.json(customers);

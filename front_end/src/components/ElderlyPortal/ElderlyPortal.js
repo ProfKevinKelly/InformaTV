@@ -14,15 +14,12 @@ import Forecast from'../Weather/forecast'; //forecast.js
 class ElderlyPortal extends Component {
   constructor() {
     super();
-    this.state = {
-      customers: []
-    };
   }
 
   componentDidMount() {
-    // fetch('/customers')
-    //   .then(res => res.json())
-    //   .then(customers => this.setState({customers}, () => console.log('Customers fetched...', customers)));
+    fetch('/customers')
+    .then(res => res.json())
+    .then(customers => this.setState({customers}, () => console.log('Customers fetched...', customers)));
   }
 
   render() {
